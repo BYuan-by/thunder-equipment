@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雷霆战机 - 全装备数据图鉴 | 天游工作室</title>
+<style>
+  :root {
+    --bg: #020617;
+    --panel: #0b1424;
+    --border: #1a2744;
+    --text: #c8d6e5;
+    --text-secondary: #6b7d99;
+    --accent: #00b4d8;
+    --accent2: #0077b6;
+    --gold: #f0c040;
+    --purple: #a855f7;
+    --red: #f43f5e;
+    --green: #22d3bb;
+    --cyan: #22d3ee;
+    --orange: #fb923c;
+    --neon-blue: #4cc9f0;
+    --neon-glow: rgba(0, 180, 216, 0.4);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ====== STARFIELD ====== */
+  #starfield { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+
+  /* ====== SCAN LINE ====== */
+  .scan-line {
+    position:fixed; top:0; left:0; width:100%; height:3px;
+    background:linear-gradient(90deg, transparent, rgba(0,180,216,0.15), transparent);
+    z-index:0; pointer-events:none;
+    animation: scanDown 4s linear infinite;
+  }
+  @keyframes scanDown {
+    0% { top:-3px; } 100% { top:100%; }
+  }
+
+  .container { max-width:1500px; margin:0 auto; padding:24px 20px 60px; position:relative; z-index:1; }
+
+  /* ====== HEADER ====== */
+  .header {
+    text-align:center; padding:48px 20px 8px; position:relative;
+  }
+  .header::before {
+    content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:600px; height:200px;
+    background:radial-gradient(ellipse, rgba(0,180,216,0.08) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .header .logo-frame {
+    display:inline-block; padding:3px; border-radius:16px;
+    background:linear-gradient(135deg, var(--accent), var(--accent2), var(--accent));
+    margin-bottom:12px;
+  }
+  .header .logo-inner {
+    background:var(--bg); border-radius:14px; padding:16px 36px;
+  }
+  .header h1 {
+    font-size:2.6rem; font-weight:900; letter-spacing:4px;
+    background:linear-gradient(180deg, #e0f2fe 0%, var(--accent) 50%, var(--accent2) 100%);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    text-shadow:none; filter:drop-shadow(0 0 20px rgba(0,180,216,0.3));
+  }
+  .header .subtitle {
+    color:var(--text-secondary); margin-top:4px; font-size:0.9rem; letter-spacing:2px;
+  }
+
+  /* ====== STATS BAR ====== */
+  .stats-bar {
+    display:flex; justify-content:center; gap:4px; flex-wrap:wrap; margin:24px 0;
+  }
+  .stat-item {
+    text-align:center; padding:14px 20px;
+    background:linear-gradient(180deg, rgba(11,20,36,0.9), rgba(11,20,36,0.6));
+    border:1px solid var(--border); position:relative;
+    min-width:90px;
+    clip-path:polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+  }
+  .stat-item:first-child {
+    border-left:2px solid var(--accent);
+    box-shadow:inset 0 0 20px rgba(0,180,216,0.05);
+  }
+  .stat-item .num {
+    font-size:1.8rem; font-weight:900;
+    font-family:"SF Mono","Cascadia Code","Consolas",monospace;
+    color:var(--neon-blue); text-shadow:0 0 12px var(--neon-glow);
+  }
+  .stat-item .label {
+    font-size:0.7rem; color:var(--text-secondary); margin-top:4px;
+    text-transform:uppercase; letter-spacing:1px;
+  }
+
+  /* ====== TABS ====== */
+  .main-tabs {
+    display:flex; gap:2px; background:var(--panel);
+    border:1px solid var(--border); padding:4px; margin-bottom:8px;
+    position:relative;
+  }
+  .main-tabs::before {
+    content:''; position:absolute; top:-1px; left:20px; right:20px; height:1px;
+    background:linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .main-tab {
+    flex:1; padding:12px 20px; text-align:center;
+    cursor:pointer; font-weight:700; font-size:0.95rem;
+    transition:all 0.3s; color:var(--text-secondary);
+    border:none; background:none; white-space:nowrap;
+    position:relative; letter-spacing:1px;
+  }
+  .main-tab:hover { color:var(--text); }
+  .main-tab.active {
+    color:#fff;
+    background:linear-gradient(180deg, rgba(0,180,216,0.15), rgba(0,119,182,0.05));
+    box-shadow:inset 0 1px 0 rgba(0,180,216,0.3);
+  }
+  .main-tab.active::after {
+    content:''; position:absolute; bottom:0; left:30%; right:30%; height:2px;
+    background:var(--accent); box-shadow:0 0 10px var(--neon-glow);
+  }
+
+  .sub-tabs {
+    display:flex; gap:6px; margin-bottom:20px; flex-wrap:wrap;
+  }
+  .sub-tab {
+    padding:7px 18px; cursor:pointer;
+    font-size:0.83rem; font-weight:600; color:var(--text-secondary);
+    border:1px solid var(--border); background:var(--panel);
+    transition:all 0.25s; white-space:nowrap;
+    clip-path:polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+  }
+  .sub-tab:hover { border-color:var(--accent); color:var(--text); box-shadow:0 0 12px rgba(0,180,216,0.1); }
+  .sub-tab.active { background:rgba(0,180,216,0.12); border-color:var(--accent); color:var(--neon-blue); }
+
+  /* ====== SEARCH ====== */
+  .search-wrap { position:relative; margin-bottom:24px; }
+  .search-wrap input {
+    width:100%; padding:12px 16px 12px 46px;
+    background:var(--panel); border:1px solid var(--border);
+    color:var(--text); font-size:0.9rem; outline:none;
+    transition:border-color 0.3s, box-shadow 0.3s;
+    letter-spacing:0.5px;
+  }
+  .search-wrap input:focus {
+    border-color:var(--accent);
+    box-shadow:0 0 20px rgba(0,180,216,0.1), inset 0 0 20px rgba(0,180,216,0.03);
+  }
+  .search-wrap input::placeholder { color:#3a4f66; }
+  .search-icon { position:absolute; left:16px; top:50%; transform:translateY(-50%); font-size:1rem; }
+
+  /* ====== SECTION ====== */
+  .table-section { margin-bottom:40px; }
+  .section-title {
+    font-size:1.1rem; font-weight:700; margin-bottom:14px;
+    display:flex; align-items:center; gap:10px;
+    letter-spacing:1px; color:var(--neon-blue);
+    border-left:3px solid var(--accent); padding-left:14px;
+  }
+  .section-title .count {
+    font-size:0.78rem; color:var(--text-secondary); font-weight:400;
+  }
+
+  /* ====== TABLE ====== */
+  .table-wrap {
+    overflow-x:auto;
+    border:1px solid var(--border);
+    background:rgba(11,20,36,0.6);
+    position:relative;
+  }
+  .table-wrap::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(0,180,216,0.3), transparent);
+    z-index:2;
+  }
+  table { width:100%; border-collapse:collapse; font-size:0.84rem; white-space:nowrap; }
+  thead th {
+    position:sticky; top:0; background:#0f1a2e; color:var(--accent);
+    font-weight:600; font-size:0.74rem; text-align:left; padding:12px 14px;
+    border-bottom:2px solid rgba(0,180,216,0.2);
+    text-transform:uppercase; letter-spacing:1px; z-index:1;
+  }
+  tbody td { padding:11px 14px; border-bottom:1px solid rgba(255,255,255,0.02); }
+  tbody tr { transition:background 0.2s; }
+  tbody tr:hover { background:rgba(0,180,216,0.04); }
+
+  /* ====== EQUIP PREVIEW ICON (CSS) ====== */
+  .eq-icon {
+    display:inline-flex; align-items:center; justify-content:center;
+    width:40px; height:40px; border-radius:6px;
+    margin-right:8px; font-size:1.2rem; flex-shrink:0;
+    position:relative; vertical-align:middle;
+  }
+  .icon-fighter {
+    background:linear-gradient(135deg, rgba(244,63,94,0.2), rgba(244,63,94,0.05));
+    border:1px solid rgba(244,63,94,0.3);
+  }
+  .icon-armor {
+    background:linear-gradient(135deg, rgba(34,211,187,0.2), rgba(34,211,187,0.05));
+    border:1px solid rgba(34,211,187,0.3);
+  }
+  .icon-subweapon {
+    background:linear-gradient(135deg, rgba(251,146,60,0.2), rgba(251,146,60,0.05));
+    border:1px solid rgba(251,146,60,0.3);
+  }
+  .icon-wingman {
+    background:linear-gradient(135deg, rgba(168,85,247,0.2), rgba(168,85,247,0.05));
+    border:1px solid rgba(168,85,247,0.3);
+  }
+
+  /* ====== BADGES ====== */
+  .tier {
+    display:inline-block; padding:3px 10px; font-size:0.7rem; font-weight:700;
+    letter-spacing:0.5px;
+    clip-path:polygon(3px 0, 100% 0, calc(100% - 3px) 100%, 0 100%);
+  }
+  .tier-1 { background:rgba(244,63,94,0.12); color:#f87171; border:1px solid rgba(244,63,94,0.25); }
+  .tier-2 { background:rgba(240,192,64,0.12); color:#fbbf24; border:1px solid rgba(240,192,64,0.25); }
+  .tier-3 { background:rgba(168,85,247,0.12); color:#c084fc; border:1px solid rgba(168,85,247,0.25); }
+  .tier-4 { background:rgba(0,180,216,0.12); color:#67e8f9; border:1px solid rgba(0,180,216,0.25); }
+  .tier-5 { background:rgba(107,125,153,0.12); color:#9ca3af; border:1px solid rgba(107,125,153,0.25); }
+
+  .skill-tag {
+    display:inline-block; padding:3px 10px; font-size:0.72rem;
+    background:rgba(34,211,238,0.08); color:var(--cyan);
+    border:1px solid rgba(34,211,238,0.2);
+    letter-spacing:0.5px;
+  }
+
+  /* ====== GOD CARDS ====== */
+  .god-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px,1fr)); gap:16px; }
+  .god-card {
+    background:linear-gradient(180deg, rgba(11,20,36,0.9), rgba(11,20,36,0.5));
+    border:1px solid var(--border); padding:20px;
+    position:relative; transition:all 0.3s; cursor:default;
+  }
+  .god-card:hover {
+    border-color:rgba(240,192,64,0.4);
+    box-shadow:0 0 30px rgba(240,192,64,0.08), inset 0 0 30px rgba(240,192,64,0.02);
+    transform:translateY(-2px);
+  }
+  .god-card::before {
+    content:''; position:absolute; top:0; left:0; width:40px; height:40px;
+    border-top:2px solid rgba(240,192,64,0.3); border-left:2px solid rgba(240,192,64,0.3);
+  }
+  .god-card h4 { font-size:1rem; margin-bottom:8px; letter-spacing:1px; }
+  .god-card .formula { font-size:0.82rem; color:var(--text-secondary); margin-bottom:8px; }
+  .god-card .formula span { color:var(--gold); font-weight:600; }
+  .god-card .skill { font-size:0.8rem; color:var(--cyan); }
+
+  /* ====== HIDDEN ====== */
+  .hidden { display:none !important; }
+
+  /* ====== FOOTER ====== */
+  .footer { text-align:center; padding:40px 0 0; color:var(--text-secondary); font-size:0.73rem; line-height:1.8; letter-spacing:0.5px; }
+
+  /* ====== ANIMATED GLOW PULSE ====== */
+  @keyframes glowPulse {
+    0%, 100% { box-shadow:0 0 5px rgba(0,180,216,0.1); }
+    50% { box-shadow:0 0 20px rgba(0,180,216,0.2); }
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width:768px) {
+    .header h1 { font-size:1.6rem; letter-spacing:2px; }
+    .god-grid { grid-template-columns:1fr; }
+    .main-tabs { overflow-x:auto; }
+    .stats-bar { gap:2px; }
+    .stat-item { padding:10px 14px; min-width:70px; }
+    .stat-item .num { font-size:1.4rem; }
+    .eq-icon { width:32px; height:32px; font-size:1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Starfield Canvas -->
+<canvas id="starfield"></canvas>
+<div class="scan-line"></div>
+
+<div class="container">
+
+<div class="header">
+  <div class="logo-frame">
+    <div class="logo-inner">
+      <h1>雷霆战机</h1>
+    </div>
+  </div>
+  <p class="subtitle">天 游 工 作 室 · 全 装 备 数 据 图 鉴</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-item"><div class="num" id="stat-total">0</div><div class="label">当 前 显 示</div></div>
+  <div class="stat-item"><div class="num" id="stat-fighter">0</div><div class="label">战 机</div></div>
+  <div class="stat-item"><div class="num" id="stat-armor">0</div><div class="label">装 甲</div></div>
+  <div class="stat-item"><div class="num" id="stat-sub">0</div><div class="label">副 武 器</div></div>
+  <div class="stat-item"><div class="num" id="stat-wing">0</div><div class="label">僚 机</div></div>
+  <div class="stat-item"><div class="num" id="stat-god">0</div><div class="label">战 神</div></div>
+</div>
+
+<div class="main-tabs">
+  <button class="main-tab active" data-view="star5">✦ 五星装备</button>
+  <button class="main-tab" data-view="god">✦ 战神装备</button>
+</div>
+
+<div class="sub-tabs" id="sub-tabs-star5">
+  <button class="sub-tab active" data-cat="all">全部</button>
+  <button class="sub-tab" data-cat="fighter">✈ 战机</button>
+  <button class="sub-tab" data-cat="armor">🛡 装甲</button>
+  <button class="sub-tab" data-cat="subweapon">◎ 副武器</button>
+  <button class="sub-tab" data-cat="wingman">✦ 僚机</button>
+</div>
+
+<div class="sub-tabs hidden" id="sub-tabs-god">
+  <button class="sub-tab active" data-cat="god-all">全部</button>
+  <button class="sub-tab" data-cat="god-fighter">✈ 战神机体</button>
+  <button class="sub-tab" data-cat="god-armor">🛡 战神装甲</button>
+  <button class="sub-tab" data-cat="god-sub">◎ 战神副武器</button>
+  <button class="sub-tab" data-cat="god-wing">✦ 战神僚机</button>
+</div>
+
+<div class="search-wrap">
+  <span class="search-icon">⌕</span>
+  <input type="text" id="search" placeholder="搜索装备名称 · 系列 · 特技 · 合成材料 …">
+</div>
+
+<div id="content"></div>
+
+<div class="footer">
+  数据来源：雷霆战机 Fandom Wiki · 官方资料站 · 玩家社区攻略<br>
+  装备数据以游戏内实际版本为准 &nbsp;|&nbsp; 天游工作室 &nbsp;|&nbsp; Tencent &nbsp;|&nbsp; <a href="admin.html" style="color:var(--accent);">管理后台</a>
+</div>
+
+</div>
+
+<script>
+// ====== STARFIELD ======
+(function(){
+  const c=document.getElementById('starfield'),ctx=c.getContext('2d');
+  let stars=[],w,h;
+  function resize(){ w=c.width=window.innerWidth; h=c.height=window.innerHeight; }
+  resize(); window.addEventListener('resize',resize);
+  for(let i=0;i<180;i++){
+    stars.push({
+      x:Math.random()*w, y:Math.random()*h,
+      r:Math.random()*1.6+0.3,
+      o:Math.random(),
+      s:Math.random()*0.008+0.002,
+      d:Math.random()*0.02-0.01
+    });
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    stars.forEach(s=>{
+      s.o+=s.d; if(s.o>1||s.o<0.2) s.d*=-1;
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle=`rgba(180,210,240,${s.o})`; ctx.fill();
+      if(s.r>1.2){
+        ctx.beginPath(); ctx.arc(s.x,s.y,s.r*1.8,0,Math.PI*2);
+        ctx.fillStyle=`rgba(100,180,220,${s.o*0.15})`; ctx.fill();
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ====== DEFAULT DATABASE (fallback) ======
+const DEFAULT_STAR5 = {
+  fighter: [
+    { name:'雷霆突击', series:'突击', evo:'突击零式 → 脉冲突击 → 迅雷突击 → 雷霆突击', atk:'2900', tier:5, skill:'普通', skillNote:'基础型，无特殊效果', rank:'五等' },
+    { name:'雷霆尖峰', series:'尖峰', evo:'尖峰零式 → 脉冲尖峰 → 迅雷尖峰 → 雷霆尖峰', atk:'3010', tier:4, skill:'贯穿', skillNote:'弹幕穿透敌人', rank:'四等' },
+    { name:'怒火凤凰', series:'猛禽', evo:'猛禽零式 → 烈风战鹰 → 暴风狮鹫 → 怒火凤凰', atk:'3150', tier:3, skill:'范围', skillNote:'火焰弹幕范围清场', rank:'三等' },
+    { name:'极光幻影', series:'幻影', evo:'幻影零式 → 疾风幻影 → 虚空幻影 → 极光幻影', atk:'3303', tier:2, skill:'激光', skillNote:'全屏穿透激光弹幕', rank:'二等' },
+    { name:'神魔异形', series:'异形', evo:'异形零式 → 钢铁异形 → 爆裂异形 → 神魔异形', atk:'3415', tier:1, skill:'贯穿', skillNote:'顶级贯穿伤害，早期版本最强', rank:'一等' },
+    { name:'智慧曙光', series:'曙光', evo:'曙光零式 → 和平曙光 → 希望曙光 → 智慧曙光', atk:'3415', tier:1, skill:'散射', skillNote:'多方向散射弹幕，清屏利器', rank:'一等' },
+    { name:'魔王刀锋', series:'刀锋', evo:'刀锋零式 → 异界刀锋 → 恶魔刀锋 → 魔王刀锋', atk:'3527', tier:1, skill:'穿刺+斩击', skillNote:'穿刺斩击双重伤害，顶级输出', rank:'一等' },
+    { name:'X翼冰河', series:'冰河', evo:'冰河零式 → 风暴冰河 → 星云冰河 → X翼冰河', atk:'3527', tier:1, skill:'急冻', skillNote:'冰冻减速+高额单体伤害', rank:'一等' },
+    { name:'异星魅影', series:'魅影', evo:'魅影零式 → 黑暗魅影 → 深渊魅影 → 异星魅影', atk:'3303', tier:2, skill:'魅影', skillNote:'暗影系进阶弹幕', rank:'二等' },
+    { name:'镜面虚幻', series:'虚幻', evo:'虚幻零式 → 迷彩虚幻 → 拟态虚幻 → 镜面虚幻', atk:'3303', tier:2, skill:'反射', skillNote:'镜面反射敌方子弹', rank:'二等' },
+    { name:'跃动辉光', series:'辉光', evo:'辉光零式 → 辐射辉光 → 迷幻辉光 → 跃动辉光', atk:'3150', tier:3, skill:'辉光', skillNote:'跳跃辉光散射攻击', rank:'三等' },
+    { name:'金箍神铁', series:'神铁', evo:'神铁零式 → 铜筋神铁 → 银辉神铁 → 金箍神铁', atk:'3415', tier:1, skill:'重击', skillNote:'重型金属弹幕攻击', rank:'一等' },
+    { name:'紫霞铃音', series:'铃音', evo:'铃音零式 → 碧羽铃音 → 蓝翎铃音 → 紫霞铃音', atk:'3150', tier:3, skill:'音波', skillNote:'音波震荡攻击', rank:'三等' },
+    { name:'绯霞流火', series:'流火', evo:'流火零式 → 赤穹流火 → 彤云流火 → 绯霞流火', atk:'3150', tier:3, skill:'流火', skillNote:'持续性火焰灼烧伤害', rank:'三等' },
+    { name:'彩翼分辉', series:'分辉', evo:'分辉零式 → 聚焦分辉 → 四色分辉 → 彩翼分辉', atk:'3303', tier:2, skill:'分光', skillNote:'多重彩色弹幕', rank:'二等' },
+    { name:'合金幻刃', series:'合金', evo:'合金零式 → 合金翠锋 → 合金苍翼 → 合金幻刃', atk:'3303', tier:2, skill:'合金', skillNote:'合金强化利刃弹幕', rank:'二等' },
+    { name:'星火蜉蝣', series:'蜉蝣', evo:'蜉蝣零式 → 隐翅蜉蝣 → 蜻翼蜉蝣 → 星火蜉蝣', atk:'3415', tier:1, skill:'蜉蝣', skillNote:'浮游炮式自主攻击', rank:'一等' },
+    { name:'星辉夜蝠', series:'夜蝠', evo:'夜蝠零式 → 玲珑夜蝠 → 锐爪夜蝠 → 星辉夜蝠', atk:'3415', tier:1, skill:'暗袭', skillNote:'暗夜环境攻击加成', rank:'一等' },
+    { name:'雅典战火', series:'雅典', evo:'雅典之火 → 雅典原火 → 雅典初火 → 雅典战火', atk:'3415', tier:1, skill:'神火', skillNote:'神圣火焰灼烧', rank:'一等' },
+    { name:'暴龙战颚', series:'暴龙', evo:'暴龙原颚 → 暴龙初颚 → 暴龙战颚', atk:'3415', tier:1, skill:'撕裂', skillNote:'暴龙撕咬攻击', rank:'一等' },
+    { name:'银须战锤', series:'银须', evo:'银须之锤 → 银须巨锤 → 银须战锤', atk:'3415', tier:1, skill:'重锤', skillNote:'锤击范围震荡伤害', rank:'一等' },
+    { name:'帝君圣刃', series:'帝君', evo:'帝君之刃 → 帝君战刃 → 帝君圣刃', atk:'3527', tier:1, skill:'圣斩', skillNote:'神圣斩击，顶级伤害', rank:'一等' },
+    { name:'狮心幻骑', series:'狮心', evo:'狮心之骑 → 狮心战骑 → 狮心幻骑', atk:'3415', tier:1, skill:'冲锋', skillNote:'骑士冲锋贯穿攻击', rank:'一等' },
+    { name:'凯旋重剑', series:'凯旋', evo:'凯旋之剑 → 凯旋战剑 → 凯旋重剑', atk:'3415', tier:1, skill:'重斩', skillNote:'重型剑刃斩击', rank:'一等' },
+    { name:'兽王狂弹', series:'兽王', evo:'兽王铁弹 → 兽王炎弹 → 兽王狂弹', atk:'3415', tier:1, skill:'狂野', skillNote:'野兽系狂暴弹幕', rank:'一等' },
+    { name:'百媚幻狐', series:'百媚', evo:'百媚丽狐 → 百媚迷狐 → 百媚幻狐', atk:'3303', tier:2, skill:'魅惑', skillNote:'魅惑系特殊弹幕效果', rank:'二等' },
+    { name:'烈阳神辉', series:'烈阳', evo:'烈阳光辉 → 烈阳灵辉 → 烈阳神辉', atk:'3415', tier:1, skill:'烈阳', skillNote:'烈阳灼烧持续伤害', rank:'一等' },
+    { name:'震海狂波', series:'震海', evo:'震海之波 → 震海碧波 → 震海狂波', atk:'3415', tier:1, skill:'波涛', skillNote:'波浪式扩散攻击', rank:'一等' },
+    { name:'永夜新星', series:'永夜', evo:'永夜之星 → 永夜澜星 → 永夜新星', atk:'3415', tier:1, skill:'永夜', skillNote:'暗夜星辰爆发伤害', rank:'一等' },
+    { name:'荆棘利刺', series:'荆棘', evo:'荆棘之刺 → 荆棘突刺 → 荆棘利刺', atk:'3303', tier:2, skill:'穿刺', skillNote:'荆棘穿透攻击', rank:'二等' },
+    { name:'苍穹灵矛', series:'苍穹', evo:'苍穹之矛 → 苍穹尖矛 → 苍穹灵矛', atk:'3415', tier:1, skill:'投射', skillNote:'远程灵矛投射', rank:'一等' },
+    { name:'神火烈焰', series:'神火', evo:'神火之焰 → 神火初焰 → 神火烈焰', atk:'3527', tier:1, skill:'神焰', skillNote:'最强火焰系伤害', rank:'一等' },
+  ],
+  armor: [
+    { name:'金刚之盾', series:'金刚', evo:'金刚零式 → 金刚坚壳 → 金刚护甲 → 金刚之盾', hp:'48000', defScore:'2400', tier:5, skill:'钢盾', skillNote:'概率减免伤害', rank:'五等' },
+    { name:'神圣之力', series:'祝福', evo:'祝福零式 → 祝福之光 → 祝福之力 → 神圣之力', hp:'52000', defScore:'2600', tier:4, skill:'神圣', skillNote:'满血时防止被秒杀', rank:'四等' },
+    { name:'黄金之铠', series:'黄金', evo:'黄金零式 → 黄金护甲 → 黄金战甲 → 黄金之铠', hp:'61600', defScore:'3080', tier:3, skill:'战魂', skillNote:'被击中10%概率触发暴走', rank:'三等' },
+    { name:'聚能之光', series:'聚能', evo:'聚能零式 → 聚能护盾 → 聚能装甲 → 聚能之光', hp:'63840', defScore:'3192', tier:2, skill:'荣耀', skillNote:'擦弹获得额外分数', rank:'二等' },
+    { name:'魔龙之鳞', series:'魔龙', evo:'魔龙零式 → 魔龙鳞甲 → 魔龙护甲 → 魔龙之鳞', hp:'66080', defScore:'3304', tier:1, skill:'龙血', skillNote:'自动回复生命值，新手神器', rank:'一等' },
+    { name:'月光之轮', series:'月光', evo:'月光零式 → 月光护盾 → 月光装甲 → 月光之轮', hp:'68320', defScore:'3416', tier:1, skill:'守护', skillNote:'周期性生成防护盾', rank:'一等' },
+    { name:'原生之华', series:'原生', evo:'原生零式 → 原生护甲 → 原生之盾 → 原生之华', hp:'70560', defScore:'3528', tier:1, skill:'转化', skillNote:'拾取水晶回复生命', rank:'一等' },
+    { name:'红莲之怒', series:'红莲', evo:'红莲零式 → 红莲护甲 → 红莲战甲 → 红莲之怒', hp:'68320', defScore:'3416', tier:1, skill:'反伤', skillNote:'受到攻击时火焰反伤', rank:'一等' },
+    { name:'溯时之源', series:'溯时', evo:'溯时零式 → 溯时之盾 → 溯时护甲 → 溯时之源', hp:'66080', defScore:'3304', tier:1, skill:'回溯', skillNote:'时间回溯减免伤害', rank:'一等' },
+    { name:'狂热之意', series:'狂热', evo:'狂热零式 → 狂热护甲 → 狂热战甲 → 狂热之意', hp:'63840', defScore:'3192', tier:2, skill:'狂热', skillNote:'生命越低攻击越高', rank:'二等' },
+    { name:'凝结之刻', series:'凝结', evo:'凝结零式 → 凝结之盾 → 凝结护甲 → 凝结之刻', hp:'66080', defScore:'3304', tier:1, skill:'冰结', skillNote:'冻结效果减免伤害', rank:'一等' },
+    { name:'血怒之心', series:'血怒', evo:'血怒零式 → 血怒护甲 → 血怒战甲 → 血怒之心', hp:'68320', defScore:'3416', tier:1, skill:'血怒', skillNote:'击杀敌人回复生命', rank:'一等' },
+    { name:'渊舞之岗', series:'渊舞', evo:'渊舞零式 → 渊舞之盾 → 渊舞护甲 → 渊舞之岗', hp:'66080', defScore:'3304', tier:1, skill:'深渊', skillNote:'深渊环境防御加成', rank:'一等' },
+    { name:'清辉之灵', series:'清辉', evo:'清辉零式 → 清辉护甲 → 清辉之盾 → 清辉之灵', hp:'63840', defScore:'3192', tier:2, skill:'净化', skillNote:'周期性清除负面效果', rank:'二等' },
+    { name:'名远之威', series:'名远', evo:'名远零式 → 名远护甲 → 名远战甲 → 名远之威', hp:'61600', defScore:'3080', tier:3, skill:'威压', skillNote:'威慑降低敌人伤害', rank:'三等' },
+    { name:'反冲之障', series:'反冲', evo:'反冲零式 → 反冲护盾 → 反冲破障 → 反冲之障', hp:'66080', defScore:'3304', tier:1, skill:'反冲', skillNote:'受击反弹伤害', rank:'一等' },
+    { name:'寂静之围', series:'寂静', evo:'寂静零式 → 寂静护甲 → 寂静围场 → 寂静之围', hp:'70560', defScore:'3528', tier:1, skill:'寂静', skillNote:'展开沉默减伤领域', rank:'一等' },
+    { name:'灭却之域', series:'灭却', evo:'灭却零式 → 灭却护甲 → 灭却领域 → 灭却之域', hp:'70560', defScore:'3528', tier:1, skill:'灭却', skillNote:'超大范围伤害减免', rank:'一等' },
+    { name:'雅典战盔', series:'雅典', evo:'— → 雅典原盔 → 雅典初盔 → 雅典战盔', hp:'70560', defScore:'3528', tier:1, skill:'神佑', skillNote:'雅典系列神圣防御', rank:'一等' },
+    { name:'暴龙战甲', series:'暴龙', evo:'— → 暴龙原甲 → 暴龙初甲 → 暴龙战甲', hp:'70560', defScore:'3528', tier:1, skill:'龙甲', skillNote:'暴龙系列龙鳞防御', rank:'一等' },
+    { name:'银须战盾', series:'银须', evo:'— → 银须之盾 → 银须巨盾 → 银须战盾', hp:'68320', defScore:'3416', tier:1, skill:'巨盾', skillNote:'巨盾格挡减伤', rank:'一等' },
+    { name:'帝君圣铠', series:'帝君', evo:'— → 帝君之铠 → 帝君战铠 → 帝君圣铠', hp:'70560', defScore:'3528', tier:1, skill:'圣佑', skillNote:'帝君系列神圣护甲', rank:'一等' },
+    { name:'狮心幻盔', series:'狮心', evo:'— → 狮心之盔 → 狮心战盔 → 狮心幻盔', hp:'66080', defScore:'3304', tier:1, skill:'狮心', skillNote:'狮心系列防护加成', rank:'一等' },
+    { name:'凯旋重甲', series:'凯旋', evo:'— → 凯旋之甲 → 凯旋战甲 → 凯旋重甲', hp:'70560', defScore:'3528', tier:1, skill:'重甲', skillNote:'重型装甲超高防御', rank:'一等' },
+    { name:'兽王狂铠', series:'兽王', evo:'— → 兽王之铠 → 兽王战铠 → 兽王狂铠', hp:'68320', defScore:'3416', tier:1, skill:'狂铠', skillNote:'狂暴状态防御提升', rank:'一等' },
+    { name:'百媚幻罗', series:'百媚', evo:'— → 百媚之罗 → 百媚战罗 → 百媚幻罗', hp:'63840', defScore:'3192', tier:2, skill:'幻罗', skillNote:'魅惑敌人降低伤害', rank:'二等' },
+    { name:'烈阳神盾', series:'烈阳', evo:'— → 烈阳之盾 → 烈阳灵盾 → 烈阳神盾', hp:'70560', defScore:'3528', tier:1, skill:'神盾', skillNote:'烈阳灼烧近身敌人', rank:'一等' },
+    { name:'震海湛晶', series:'震海', evo:'— → 震海之晶 → 震海碧晶 → 震海湛晶', hp:'68320', defScore:'3416', tier:1, skill:'湛晶', skillNote:'水晶护盾回复加成', rank:'一等' },
+    { name:'永夜暗铠', series:'永夜', evo:'— → 永夜之铠 → 永夜战铠 → 永夜暗铠', hp:'70560', defScore:'3528', tier:1, skill:'暗铠', skillNote:'暗夜属性强化防御', rank:'一等' },
+    { name:'荆棘猎甲', series:'荆棘', evo:'— → 荆棘之甲 → 荆棘战甲 → 荆棘猎甲', hp:'63840', defScore:'3192', tier:2, skill:'猎甲', skillNote:'荆棘反伤护甲', rank:'二等' },
+    { name:'苍穹爆炎', series:'苍穹', evo:'— → 苍穹之甲 → 苍穹战甲 → 苍穹爆炎', hp:'70560', defScore:'3528', tier:1, skill:'爆炎', skillNote:'受击爆炸反击', rank:'一等' },
+    { name:'神火重铠', series:'神火', evo:'— → 神火之铠 → 神火战铠 → 神火重铠', hp:'70560', defScore:'3528', tier:1, skill:'重铠', skillNote:'神火系列顶级重甲', rank:'一等' },
+  ],
+  subweapon: [
+    { name:'巡航导弹', series:'导弹', evo:'跟踪导弹 → 精确导弹 → 制导导弹 → 巡航导弹', atk:'2855', tier:5, skill:'跟踪', skillNote:'8枚自动追踪导弹', rank:'五等' },
+    { name:'贫铀穿甲弹', series:'穿甲', evo:'穿甲弹 → 高爆穿甲弹 → 重铀穿甲弹 → 贫铀穿甲弹', atk:'2967', tier:4, skill:'贯穿', skillNote:'4枚穿透弹，贴脸杀BOSS', rank:'四等' },
+    { name:'闪电新星', series:'闪电', evo:'闪电球 → 闪电链 → 闪电风暴 → 闪电新星', atk:'3079', tier:3, skill:'追踪+范围', skillNote:'6颗追踪闪电球', rank:'三等' },
+    { name:'融合核弹', series:'核弹', evo:'小型核弹 → 中型核弹 → 大型核弹 → 融合核弹', atk:'3191', tier:2, skill:'范围', skillNote:'2颗超大范围核弹', rank:'二等' },
+    { name:'聚能爆破弹', series:'爆破', evo:'爆破弹 → 高能爆破弹 → 烈性爆破弹 → 聚能爆破弹', atk:'3303', tier:1, skill:'贯穿+范围', skillNote:'贯穿敌人并产生爆炸', rank:'一等' },
+    { name:'超导激光', series:'激光', evo:'激光器 → 高能激光 → 离子激光 → 超导激光', atk:'3415', tier:1, skill:'锁定', skillNote:'4束自动锁定激光', rank:'一等' },
+    { name:'噬能孢子', series:'孢子', evo:'能量孢子 → 噬能孢子 → 噬能孢子 → 噬能孢子', atk:'3303', tier:1, skill:'吞噬', skillNote:'吸取敌人能量转化伤害', rank:'一等' },
+    { name:'震荡干涉波', series:'震荡', evo:'震波 → 震荡波 → 干涉波 → 震荡干涉波', atk:'3303', tier:1, skill:'震荡', skillNote:'震荡波范围伤害', rank:'一等' },
+    { name:'空间湮灭波', series:'湮灭', evo:'湮灭波 → 空间湮灭波 → 空间湮灭波 → 空间湮灭波', atk:'3415', tier:1, skill:'湮灭', skillNote:'空间湮灭超大范围伤害', rank:'一等' },
+    { name:'归零矩阵', series:'归零', evo:'归零器 → 归零阵列 → 归零矩阵 → 归零矩阵', atk:'3415', tier:1, skill:'归零', skillNote:'清除敌方弹幕', rank:'一等' },
+    { name:'尖晶星芒', series:'星芒', evo:'星芒 → 尖晶星芒 → 尖晶星芒 → 尖晶星芒', atk:'3191', tier:2, skill:'星芒', skillNote:'散射星芒攻击', rank:'二等' },
+    { name:'黑枪四圣', series:'黑枪', evo:'黑枪 → 黑枪四圣 → 黑枪四圣 → 黑枪四圣', atk:'3303', tier:1, skill:'四圣', skillNote:'四方向暗黑枪击', rank:'一等' },
+    { name:'紫青旋影', series:'旋影', evo:'旋影 → 紫青旋影 → 紫青旋影 → 紫青旋影', atk:'3191', tier:2, skill:'旋转', skillNote:'旋转弹幕攻击', rank:'二等' },
+    { name:'频闪爆弹', series:'频闪', evo:'频闪弹 → 频闪爆弹 → 频闪爆弹 → 频闪爆弹', atk:'3303', tier:1, skill:'频闪', skillNote:'高频闪光伴随爆炸', rank:'一等' },
+    { name:'破坏力场', series:'力场', evo:'力场 → 破坏力场 → 破坏力场 → 破坏力场', atk:'3415', tier:1, skill:'力场', skillNote:'持续伤害力场', rank:'一等' },
+    { name:'动能破片弹', series:'破片', evo:'破片弹 → 动能破片弹 → 动能破片弹 → 动能破片弹', atk:'3303', tier:1, skill:'破片', skillNote:'爆炸碎片范围伤害', rank:'一等' },
+    { name:'红移谐振波', series:'谐振', evo:'谐振波 → 红移谐振波 → 红移谐振波 → 红移谐振波', atk:'3303', tier:1, skill:'谐振', skillNote:'谐振连锁传递伤害', rank:'一等' },
+    { name:'幻视魔眼炮', series:'魔眼', evo:'魔眼 → 幻视魔眼 → 幻视魔眼炮 → 幻视魔眼炮', atk:'3415', tier:1, skill:'幻视', skillNote:'迷惑敌人并造成伤害', rank:'一等' },
+    { name:'雅典战弓', series:'雅典', evo:'— → 雅典之弓 → 雅典战弓 → 雅典战弓', atk:'3415', tier:1, skill:'神箭', skillNote:'雅典系列神圣射击', rank:'一等' },
+    { name:'暴龙战吼', series:'暴龙', evo:'— → 暴龙之吼 → 暴龙战吼 → 暴龙战吼', atk:'3415', tier:1, skill:'战吼', skillNote:'暴龙咆哮范围伤害', rank:'一等' },
+    { name:'银须战炮', series:'银须', evo:'— → 银须之炮 → 银须战炮 → 银须战炮', atk:'3415', tier:1, skill:'重炮', skillNote:'重型炮击', rank:'一等' },
+    { name:'帝君圣箭', series:'帝君', evo:'— → 帝君之箭 → 帝君战箭 → 帝君圣箭', atk:'3415', tier:1, skill:'圣箭', skillNote:'帝君系列神圣之箭', rank:'一等' },
+    { name:'狮心幻刃', series:'狮心', evo:'— → 狮心之刃 → 狮心幻刃 → 狮心幻刃', atk:'3303', tier:1, skill:'幻刃', skillNote:'幻影利刃攻击', rank:'一等' },
+    { name:'凯旋重箭', series:'凯旋', evo:'— → 凯旋之箭 → 凯旋战箭 → 凯旋重箭', atk:'3415', tier:1, skill:'重箭', skillNote:'重型箭矢高额伤害', rank:'一等' },
+    { name:'兽王狂镖', series:'兽王', evo:'— → 兽王之镖 → 兽王战镖 → 兽王狂镖', atk:'3303', tier:1, skill:'狂镖', skillNote:'狂暴飞镖连射', rank:'一等' },
+    { name:'百媚幻花', series:'百媚', evo:'— → 百媚之花 → 百媚幻花 → 百媚幻花', atk:'3191', tier:2, skill:'幻花', skillNote:'魅惑花瓣散射', rank:'二等' },
+    { name:'烈阳神轮', series:'烈阳', evo:'— → 烈阳之轮 → 烈阳战轮 → 烈阳神轮', atk:'3415', tier:1, skill:'神轮', skillNote:'烈阳灼烧轮刃', rank:'一等' },
+    { name:'震海神翼', series:'震海', evo:'— → 震海之翼 → 震海战翼 → 震海神翼', atk:'3303', tier:1, skill:'神翼', skillNote:'波浪羽翼攻击', rank:'一等' },
+    { name:'永夜巨涡', series:'永夜', evo:'— → 永夜之涡 → 永夜巨涡 → 永夜巨涡', atk:'3415', tier:1, skill:'巨涡', skillNote:'暗夜漩涡吞噬敌人', rank:'一等' },
+    { name:'荆棘影蝶', series:'荆棘', evo:'— → 荆棘之蝶 → 荆棘战蝶 → 荆棘影蝶', atk:'3191', tier:2, skill:'影蝶', skillNote:'暗影蝴蝶追踪攻击', rank:'二等' },
+    { name:'苍穹神盾', series:'苍穹', evo:'— → 苍穹之盾 → 苍穹神盾 → 苍穹神盾', atk:'3303', tier:1, skill:'神盾', skillNote:'攻防一体神盾', rank:'一等' },
+    { name:'神火裂弹', series:'神火', evo:'— → 神火之弹 → 神火战弹 → 神火裂弹', atk:'3415', tier:1, skill:'裂弹', skillNote:'神火分裂弹幕', rank:'一等' },
+  ],
+  wingman: [
+    { name:'散弹机关炮', series:'机枪', evo:'机关炮 → 连发机关炮 → 散弹机关炮 → 散弹机关炮', atk:'2900', tier:5, skill:'机枪', skillNote:'普通散射弹幕', rank:'五等' },
+    { name:'米加巨炮', series:'米加', evo:'米加炮 → 米加粒子炮 → 米加巨炮 → 米加巨炮', atk:'3010', tier:4, skill:'激光', skillNote:'粒子激光穿透', rank:'四等' },
+    { name:'超高速火炮', series:'火炮', evo:'高速机枪 → 高速火炮 → 超高速火炮 → 超高速火炮', atk:'3150', tier:3, skill:'高速', skillNote:'超高速直线射击', rank:'三等' },
+    { name:'毁灭守卫', series:'守卫', evo:'守卫 → 钢铁守卫 → 金光守卫 → 毁灭守卫', atk:'3303', tier:2, skill:'防御', skillNote:'拦截敌方子弹，手残福音', rank:'二等' },
+    { name:'聚能电浆炮', series:'电浆', evo:'电浆炮 → 聚能电浆炮 → 聚能电浆炮 → 聚能电浆炮', atk:'3415', tier:1, skill:'贯穿', skillNote:'顶级贯穿电浆束', rank:'一等' },
+    { name:'超导电磁炮', series:'电磁', evo:'电磁炮 → 超导电磁炮 → 超导电磁炮 → 超导电磁炮', atk:'3415', tier:1, skill:'贯穿', skillNote:'电磁贯穿伤害', rank:'一等' },
+    { name:'饱和溶胶炮', series:'溶胶', evo:'溶胶炮 → 饱和溶胶炮 → 饱和溶胶炮 → 饱和溶胶炮', atk:'3303', tier:1, skill:'溶胶', skillNote:'粘着性持续伤害', rank:'一等' },
+    { name:'聚变液晶炮', series:'液晶', evo:'液晶炮 → 聚变液晶炮 → 聚变液晶炮 → 聚变液晶炮', atk:'3303', tier:1, skill:'聚变', skillNote:'液晶聚变高额伤害', rank:'一等' },
+    { name:'回光幻翼', series:'幻翼', evo:'幻翼 → 回光幻翼 → 回光幻翼 → 回光幻翼', atk:'3191', tier:2, skill:'回光', skillNote:'反射弹幕', rank:'二等' },
+    { name:'琴弦捕手', series:'琴弦', evo:'捕手 → 琴弦捕手 → 琴弦捕手 → 琴弦捕手', atk:'3303', tier:1, skill:'捕获', skillNote:'捕获敌方弹幕', rank:'一等' },
+    { name:'循环能量刃', series:'能量刃', evo:'能量刃 → 循环能量刃 → 循环能量刃 → 循环能量刃', atk:'3415', tier:1, skill:'循环', skillNote:'回旋能量刃攻击', rank:'一等' },
+    { name:'百变猎手', series:'猎手', evo:'猎手 → 百变猎手 → 百变猎手 → 百变猎手', atk:'3303', tier:1, skill:'变形', skillNote:'可变换多种攻击模式', rank:'一等' },
+    { name:'荧惑飞炎', series:'荧惑', evo:'飞炎 → 荧惑飞炎 → 荧惑飞炎 → 荧惑飞炎', atk:'3303', tier:1, skill:'飞炎', skillNote:'追踪火焰弹', rank:'一等' },
+    { name:'光棱护卫', series:'光棱', evo:'护卫 → 光棱护卫 → 光棱护卫 → 光棱护卫', atk:'3191', tier:2, skill:'光棱', skillNote:'光棱防御+反击', rank:'二等' },
+    { name:'极昼灯芯', series:'灯芯', evo:'灯芯 → 极昼灯芯 → 极昼灯芯 → 极昼灯芯', atk:'3303', tier:1, skill:'极昼', skillNote:'持续光照灼烧', rank:'一等' },
+    { name:'航迹光束', series:'航迹', evo:'光束 → 航迹光束 → 航迹光束 → 航迹光束', atk:'3303', tier:1, skill:'航迹', skillNote:'跟踪光束攻击', rank:'一等' },
+    { name:'数据化涡流', series:'涡流', evo:'涡流 → 数据化涡流 → 数据化涡流 → 数据化涡流', atk:'3415', tier:1, skill:'涡流', skillNote:'漩涡牵引持续伤害', rank:'一等' },
+    { name:'日冕光晕', series:'日冕', evo:'光晕 → 日冕光晕 → 日冕光晕 → 日冕光晕', atk:'3415', tier:1, skill:'日冕', skillNote:'日冕光环范围灼烧', rank:'一等' },
+    { name:'雅典战光', series:'雅典', evo:'— → 雅典之光 → 雅典战光 → 雅典战光', atk:'3415', tier:1, skill:'圣光', skillNote:'雅典系列神圣光芒', rank:'一等' },
+    { name:'暴龙战翼', series:'暴龙', evo:'— → 暴龙之翼 → 暴龙战翼 → 暴龙战翼', atk:'3415', tier:1, skill:'龙翼', skillNote:'暴龙翼击狂风', rank:'一等' },
+    { name:'银须战铳', series:'银须', evo:'— → 银须之铳 → 银须战铳 → 银须战铳', atk:'3415', tier:1, skill:'战铳', skillNote:'重型火铳轰击', rank:'一等' },
+    { name:'帝君圣威', series:'帝君', evo:'— → 帝君之威 → 帝君战威 → 帝君圣威', atk:'3415', tier:1, skill:'圣威', skillNote:'帝君系列神圣威压', rank:'一等' },
+    { name:'狮心幻焰', series:'狮心', evo:'— → 狮心之焰 → 狮心战焰 → 狮心幻焰', atk:'3303', tier:1, skill:'幻焰', skillNote:'幻影火焰攻击', rank:'一等' },
+    { name:'凯旋重刀', series:'凯旋', evo:'— → 凯旋之刀 → 凯旋战刀 → 凯旋重刀', atk:'3415', tier:1, skill:'重刀', skillNote:'重型刀锋切割', rank:'一等' },
+    { name:'兽王狂刀', series:'兽王', evo:'— → 兽王之刀 → 兽王战刀 → 兽王狂刀', atk:'3303', tier:1, skill:'狂刀', skillNote:'狂暴刀锋连斩', rank:'一等' },
+    { name:'百媚幻樱', series:'百媚', evo:'— → 百媚之樱 → 百媚战樱 → 百媚幻樱', atk:'3191', tier:2, skill:'幻樱', skillNote:'樱花幻影散射', rank:'二等' },
+    { name:'烈阳神乌', series:'烈阳', evo:'— → 烈阳之乌 → 烈阳战乌 → 烈阳神乌', atk:'3415', tier:1, skill:'神乌', skillNote:'金乌烈阳灼烧', rank:'一等' },
+    { name:'震海圣泉', series:'震海', evo:'— → 震海之泉 → 震海战泉 → 震海圣泉', atk:'3303', tier:1, skill:'圣泉', skillNote:'治愈泉水回复', rank:'一等' },
+    { name:'永夜幻刃', series:'永夜', evo:'— → 永夜之刃 → 永夜战刃 → 永夜幻刃', atk:'3415', tier:1, skill:'幻刃', skillNote:'暗夜幻影之刃', rank:'一等' },
+    { name:'荆棘耀枪', series:'荆棘', evo:'— → 荆棘之枪 → 荆棘战枪 → 荆棘耀枪', atk:'3191', tier:2, skill:'耀枪', skillNote:'荆棘光枪穿刺', rank:'二等' },
+    { name:'苍穹巨斧', series:'苍穹', evo:'— → 苍穹之斧 → 苍穹战斧 → 苍穹巨斧', atk:'3415', tier:1, skill:'巨斧', skillNote:'巨斧劈砍重击', rank:'一等' },
+    { name:'神火魔炎', series:'神火', evo:'— → 神火之炎 → 神火战炎 → 神火魔炎', atk:'3415', tier:1, skill:'魔炎', skillNote:'神火与魔焰双属性', rank:'一等' },
+  ],
+};
+
+const DEFAULT_GOD = {
+  fighter: [
+    { name:'强袭斗士', mats:'怒火凤凰 + 极光幻影', skill:'范围+激光', note:'入门级战神，零氪玩家首选', tier:3 },
+    { name:'自由悍将', mats:'神魔异形 + 智慧曙光', skill:'贯穿+散射', note:'经典战神，综合能力均衡', tier:2 },
+    { name:'暗夜神锋', mats:'智慧曙光 + 魔王刀锋', skill:'穿刺+斩击', note:'综合能力最强的战神', tier:1 },
+    { name:'冰河领主', mats:'魔王刀锋 + X翼冰河', skill:'斩击+急冻', note:'单体BOSS杀手，清兵稍弱', tier:1 },
+    { name:'暴雪女帝', mats:'X翼冰河 + 智慧曙光', skill:'急冻+散射', note:'冰系散射型战神', tier:2 },
+    { name:'绯红英灵', mats:'极光幻影 + 魔王刀锋', skill:'激光+斩击', note:'切割型战神', tier:2 },
+    { name:'千飓武神', mats:'异星魅影 + 镜面虚幻', skill:'魅影+反射', note:'幻影系融合战神', tier:2 },
+    { name:'斗战神猿', mats:'金箍神铁 + 跃动辉光', skill:'重击+辉光', note:'神铁辉光系战神', tier:2 },
+    { name:'玉影紫霞', mats:'紫霞铃音 + 绯霞流火', skill:'音波+流火', note:'铃音流火双属性融合', tier:2 },
+    { name:'重装泰坦', mats:'彩翼分辉 + 合金幻刃', skill:'分光+合金', note:'重型装甲战神', tier:2 },
+    { name:'金源武圣', mats:'星火蜉蝣 + 星辉夜蝠', skill:'蜉蝣+暗袭', note:'蜉蝣夜蝠顶级融合', tier:1 },
+    { name:'雅典女神', mats:'雅典系列合成', skill:'神火', note:'雅典系列专属战神', tier:1 },
+    { name:'暴龙突击', mats:'暴龙系列合成', skill:'撕裂', note:'暴龙系列专属战神', tier:1 },
+    { name:'银须首领', mats:'银须系列合成', skill:'重锤', note:'银须系列专属战神', tier:1 },
+    { name:'帝君嬴皇', mats:'帝君系列合成', skill:'圣斩', note:'帝君系列专属战神', tier:1 },
+    { name:'狮心圣骑', mats:'狮心系列合成', skill:'冲锋', note:'狮心系列专属战神', tier:1 },
+    { name:'凯旋大帝', mats:'凯旋系列合成', skill:'重斩', note:'凯旋系列专属战神', tier:1 },
+    { name:'兽王忍侍', mats:'兽王系列合成', skill:'狂野', note:'兽王系列专属战神', tier:1 },
+    { name:'百魅妖狐', mats:'百媚系列合成', skill:'魅惑', note:'百媚系列专属战神', tier:2 },
+    { name:'烈阳主宰', mats:'烈阳系列合成', skill:'烈阳', note:'烈阳系列专属战神', tier:1 },
+    { name:'震海霸主', mats:'震海系列合成', skill:'波涛', note:'震海系列专属战神', tier:1 },
+    { name:'永夜魔君', mats:'永夜系列合成', skill:'永夜', note:'永夜系列专属战神', tier:1 },
+    { name:'银色荆棘', mats:'荆棘系列合成', skill:'穿刺', note:'荆棘系列专属战神', tier:2 },
+    { name:'苍穹战魂', mats:'苍穹系列合成', skill:'投射', note:'苍穹系列专属战神', tier:1 },
+    { name:'神火流焰', mats:'神火系列合成', skill:'神焰', note:'神火系列专属战神', tier:1 },
+  ],
+  armor: [
+    { name:'止战金魂', mats:'黄金之铠 + 聚能之光', skill:'战魂+荣耀', note:'擦分+受伤暴走，攻防一体', tier:2 },
+    { name:'守月魔殇', mats:'魔龙之鳞 + 月光之轮', skill:'龙血+守护', note:'自动回血+暴走护盾，生存顶级', tier:1 },
+    { name:'原力华轮', mats:'原生之华 + 月光之轮', skill:'转化+守护', note:'吃水晶回血+暴走护盾', tier:1 },
+    { name:'永世决意', mats:'金刚之盾 + 神圣之力', skill:'钢盾+神圣', note:'概率减伤+防秒杀，新手过渡', tier:3 },
+    { name:'净莲芳华', mats:'原生之华 + 红莲之怒', skill:'转化+反伤', note:'回血+火焰反伤双重效果', tier:1 },
+    { name:'怒血金甲', mats:'血怒之心进阶合成', skill:'血怒强化', note:'护盾期间攻击力+50%', tier:2 },
+  ],
+  sub: [
+    { name:'星光爆裂', mats:'聚能爆破弹 + 超导激光', skill:'爆破+锁定', note:'贯穿爆炸+自动锁定', tier:1 },
+    { name:'闪电核弹', mats:'闪电新星 + 融合核弹', skill:'追踪+范围', note:'追踪闪电+核弹大范围', tier:2 },
+    { name:'彻翼巡星', mats:'贫铀穿甲弹 + 巡航导弹', skill:'贯穿+跟踪', note:'穿透追踪兼备，新手过渡', tier:3 },
+    { name:'死光晶孢', mats:'超导激光 + 噬能孢子', skill:'锁定+吞噬', note:'暗夜神锋套装核心配件', tier:1 },
+    { name:'曲率振波', mats:'噬能孢子 + 震荡干涉波', skill:'吞噬+震荡', note:'冰河领主套装核心配件', tier:1 },
+    { name:'月光银铃', mats:'后期特殊合成', skill:'机枪+盘旋', note:'多段伤害覆盖', tier:2 },
+    { name:'斥力破片', mats:'后期特殊合成', skill:'扫射+贯穿', note:'破片扫射清场', tier:2 },
+  ],
+  wing: [
+    { name:'极速守卫', mats:'超高速火炮 + 毁灭守卫', skill:'环射+防御', note:'360°螺旋弹幕+挡子弹', tier:2 },
+    { name:'量子磁流炮', mats:'聚能电浆炮 + 超导电磁炮', skill:'穿甲+贯穿', note:'双贯穿属性叠加', tier:1 },
+    { name:'广域流星炮', mats:'超导电磁炮 + 饱和溶胶炮', skill:'贯穿+溶胶', note:'暗夜神锋套装核心配件', tier:1 },
+    { name:'末日熔岩炮', mats:'饱和溶胶炮 + 聚变液晶炮', skill:'溶胶+聚变', note:'冰河领主套装核心配件', tier:1 },
+    { name:'荧惑守心', mats:'荧惑飞炎进阶合成', skill:'追踪+散射', note:'追踪火焰散射', tier:2 },
+    { name:'狼爪光束', mats:'后期特殊合成', skill:'光束+撕裂', note:'后期高输出僚机', tier:2 },
+  ],
+};
+
+// ====== LOAD FROM LOCALSTORAGE (or fallback to defaults) ======
+function loadFromStorage(key, fallback) {
+  try {
+    const stored = localStorage.getItem(key);
+    if (stored) return JSON.parse(stored);
+  } catch(e) {}
+  return JSON.parse(JSON.stringify(fallback));
+}
+const star5 = loadFromStorage('lt_equip_star5', DEFAULT_STAR5);
+const godEquip = loadFromStorage('lt_equip_god', DEFAULT_GOD);
+
+// ====== EQUIP ICON SVGs (CSS-based preview) ======
+function getIconHTML(cat, series, imgUrl) {
+  const fallbackSVG = {
+    fighter: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="fg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f43f5e"/><stop offset="100%" stop-color="#e11d48"/></linearGradient></defs><polygon points="18,2 32,28 18,24 4,28" fill="none" stroke="url(#fg2)" stroke-width="1.5" opacity="0.9"/><line x1="18" y1="14" x2="10" y2="28" stroke="url(#fg2)" stroke-width="1" opacity="0.5"/><line x1="18" y1="14" x2="26" y2="28" stroke="url(#fg2)" stroke-width="1" opacity="0.5"/><circle cx="18" cy="10" r="2" fill="#f43f5e" opacity="0.8"/></svg>`,
+    armor: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="ag2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3bb"/><stop offset="100%" stop-color="#0d9488"/></linearGradient></defs><path d="M18,2 L30,8 L30,18 C30,26 24,31 18,34 C12,31 6,26 6,18 L6,8 Z" fill="none" stroke="url(#ag2)" stroke-width="1.5" opacity="0.9"/><line x1="12" y1="14" x2="24" y2="14" stroke="url(#ag2)" stroke-width="1" opacity="0.4"/><line x1="12" y1="19" x2="24" y2="19" stroke="url(#ag2)" stroke-width="1" opacity="0.4"/><circle cx="18" cy="24" r="3" fill="none" stroke="url(#ag2)" stroke-width="1.2" opacity="0.7"/></svg>`,
+    subweapon: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="sg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#ea580c"/></linearGradient></defs><circle cx="18" cy="18" r="14" fill="none" stroke="url(#sg2)" stroke-width="1.5" opacity="0.9"/><circle cx="18" cy="18" r="8" fill="none" stroke="url(#sg2)" stroke-width="1" opacity="0.5"/><circle cx="18" cy="18" r="2" fill="#fb923c" opacity="0.9"/></svg>`,
+    wingman: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="wg2" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="18" cy="18" rx="15" ry="10" fill="none" stroke="url(#wg2)" stroke-width="1.5" opacity="0.9"/><ellipse cx="18" cy="18" rx="6" ry="12" fill="none" stroke="url(#wg2)" stroke-width="1" opacity="0.5"/><circle cx="18" cy="18" r="2.5" fill="#a855f7" opacity="0.8"/></svg>`,
+  };
+  const fb = fallbackSVG[cat] || '';
+  if (imgUrl) {
+    return `<span class="eq-icon icon-${cat}" style="background:rgba(0,0,0,0.3);border:1px solid var(--border);padding:2px;overflow:hidden;"><img src="${imgUrl}" style="width:100%;height:100%;object-fit:contain;border-radius:4px;" onerror="this.outerHTML='${fb.replace(/'/g,"\\'").replace(/"/g,'&quot;')}'"></span>`;
+  }
+  const icons = {
+    fighter: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="fg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f43f5e"/><stop offset="100%" stop-color="#e11d48"/></linearGradient></defs><polygon points="18,2 32,28 18,24 4,28" fill="none" stroke="url(#fg)" stroke-width="1.5" opacity="0.9"/><line x1="18" y1="14" x2="10" y2="28" stroke="url(#fg)" stroke-width="1" opacity="0.5"/><line x1="18" y1="14" x2="26" y2="28" stroke="url(#fg)" stroke-width="1" opacity="0.5"/><circle cx="18" cy="10" r="2" fill="#f43f5e" opacity="0.8"/></svg>`,
+    armor: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="ag" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#22d3bb"/><stop offset="100%" stop-color="#0d9488"/></linearGradient></defs><path d="M18,2 L30,8 L30,18 C30,26 24,31 18,34 C12,31 6,26 6,18 L6,8 Z" fill="none" stroke="url(#ag)" stroke-width="1.5" opacity="0.9"/><line x1="12" y1="14" x2="24" y2="14" stroke="url(#ag)" stroke-width="1" opacity="0.4"/><line x1="12" y1="19" x2="24" y2="19" stroke="url(#ag)" stroke-width="1" opacity="0.4"/><circle cx="18" cy="24" r="3" fill="none" stroke="url(#ag)" stroke-width="1.2" opacity="0.7"/></svg>`,
+    subweapon: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fb923c"/><stop offset="100%" stop-color="#ea580c"/></linearGradient></defs><circle cx="18" cy="18" r="14" fill="none" stroke="url(#sg)" stroke-width="1.5" opacity="0.9"/><circle cx="18" cy="18" r="8" fill="none" stroke="url(#sg)" stroke-width="1" opacity="0.5"/><line x1="18" y1="4" x2="18" y2="10" stroke="url(#sg)" stroke-width="1.5" opacity="0.6"/><line x1="18" y1="26" x2="18" y2="32" stroke="url(#sg)" stroke-width="1.5" opacity="0.6"/><line x1="4" y1="18" x2="10" y2="18" stroke="url(#sg)" stroke-width="1.5" opacity="0.6"/><line x1="26" y1="18" x2="32" y2="18" stroke="url(#sg)" stroke-width="1.5" opacity="0.6"/><circle cx="18" cy="18" r="2" fill="#fb923c" opacity="0.9"/></svg>`,
+    wingman: `<svg width="36" height="36" viewBox="0 0 36 36"><defs><linearGradient id="wg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#7c3aed"/></linearGradient></defs><ellipse cx="18" cy="18" rx="15" ry="10" fill="none" stroke="url(#wg)" stroke-width="1.5" opacity="0.9"/><ellipse cx="18" cy="18" rx="6" ry="12" fill="none" stroke="url(#wg)" stroke-width="1" opacity="0.5"/><circle cx="18" cy="18" r="2.5" fill="#a855f7" opacity="0.8"/><circle cx="8" cy="14" r="1.5" fill="#a855f7" opacity="0.5"/><circle cx="28" cy="14" r="1.5" fill="#a855f7" opacity="0.5"/></svg>`,
+  };
+  return `<span class="eq-icon icon-${cat}">${icons[cat] || ''}</span>`;
+}
+
+// ====== RENDER ======
+let currentView = 'star5';
+let currentCat = 'all';
+
+function buildStar5Table(items, cols, cat) {
+  let html = '<div class="table-wrap"><table><thead><tr>';
+  cols.forEach(c => html += `<th>${c}</th>`);
+  html += '</tr></thead><tbody>';
+  items.forEach(eq => {
+    const vals = cols.map(c => {
+      if (c === '装备名称') return `${getIconHTML(cat, eq.series, eq.img)}<strong>${eq.name}</strong>`;
+      if (c === '系列') return eq.series;
+      if (c === '进化路线') return `<span style="font-size:0.73rem;color:var(--text-secondary)">${eq.evo}</span>`;
+      if (c === '满级攻击') return `<span style="color:#f87171;font-weight:700;font-family:monospace">${eq.atk}</span>`;
+      if (c === '满级生命') return `<span style="color:#22d3bb;font-weight:700;font-family:monospace">${eq.hp}</span>`;
+      if (c === '战力折算') return `<span style="font-family:monospace">${eq.defScore}</span>`;
+      if (c === '特技') return `<span class="skill-tag">${eq.skill}</span>`;
+      if (c === '效果说明') return `<span style="font-size:0.76rem;color:var(--text-secondary)">${eq.skillNote}</span>`;
+      if (c === '品质梯队') return `<span class="tier tier-${eq.tier}">${eq.rank}</span>`;
+      return '';
+    });
+    html += `<tr data-cat="${eq._cat||''}" data-search="${eq.name} ${eq.series} ${eq.skill} ${eq.skillNote||''} ${eq.rank||''}">${vals.map(v=>`<td>${v}</td>`).join('')}</tr>`;
+  });
+  html += '</tbody></table></div>';
+  return html;
+}
+
+function renderStar5(cat) {
+  let html = '';
+  const cats = cat === 'all' ? ['fighter','armor','subweapon','wingman'] : [cat];
+  const titles = { fighter:'✈ 战机', armor:'🛡 装甲', subweapon:'◎ 副武器', wingman:'✦ 僚机' };
+  const colsMap = {
+    fighter: ['装备名称','系列','进化路线','满级攻击','特技','效果说明','品质梯队'],
+    armor: ['装备名称','系列','进化路线','满级生命','战力折算','特技','效果说明','品质梯队'],
+    subweapon: ['装备名称','系列','进化路线','满级攻击','特技','效果说明','品质梯队'],
+    wingman: ['装备名称','系列','进化路线','满级攻击','特技','效果说明','品质梯队'],
+  };
+  cats.forEach(c => {
+    const items = star5[c].map(e => ({...e, _cat:c}));
+    html += `<div class="table-section" data-godcat="${c}">
+      <div class="section-title">${titles[c]} <span class="count">（${items.length} 件）</span></div>
+      ${buildStar5Table(items, colsMap[c], c)}
+    </div>`;
+  });
+  return html;
+}
+
+function renderGodEquip(cat) {
+  let html = '';
+  const cats = cat === 'god-all' ? ['fighter','armor','sub','wing'] : [cat.replace('god-','')];
+  const titles = { fighter:'✈ 战神机体', armor:'🛡 战神装甲', sub:'◎ 战神副武器', wing:'✦ 战神僚机' };
+  const catMap = { fighter:'fighter', armor:'armor', sub:'sub', wing:'wing' };
+  cats.forEach(c => {
+    const items = godEquip[catMap[c]] || [];
+    html += `<div class="table-section" data-godcat="${c}">
+      <div class="section-title">${titles[c]} <span class="count">（${items.length} 件）</span></div>
+      <div class="god-grid">`;
+    items.forEach(eq => {
+      html += `<div class="god-card" data-search="${eq.name} ${eq.mats} ${eq.skill} ${eq.note||''}">
+        <h4>✦ ${eq.name} <span class="tier tier-${eq.tier}" style="margin-left:8px;">T${eq.tier}</span></h4>
+        <div class="formula">合成材料：<span>${eq.mats}</span></div>
+        <div class="skill">特技效果：${eq.skill}</div>
+        ${eq.note ? `<div style="font-size:0.76rem;color:var(--text-secondary);margin-top:8px;">${eq.note}</div>` : ''}
+      </div>`;
+    });
+    html += '</div></div>';
+  });
+  return html;
+}
+
+function updateContent() {
+  const content = document.getElementById('content');
+  content.innerHTML = currentView === 'star5' ? renderStar5(currentCat) : renderGodEquip(currentCat);
+  applySearch(); updateStats();
+}
+
+function applySearch() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  document.querySelectorAll('[data-search]').forEach(el => {
+    el.classList.toggle('hidden', q !== '' && !el.dataset.search.toLowerCase().includes(q));
+  });
+  document.querySelectorAll('.table-section').forEach(sec => {
+    const vis = sec.querySelectorAll('tbody tr:not(.hidden), .god-card:not(.hidden)').length > 0;
+    sec.classList.toggle('hidden', !vis);
+  });
+  updateStats();
+}
+
+function updateStats() {
+  let f=0,a=0,s=0,w=0,g=0;
+  if (currentView === 'star5') {
+    document.querySelectorAll('tbody tr:not(.hidden)').forEach(tr => {
+      const c = tr.dataset.cat;
+      if (c==='fighter') f++; else if (c==='armor') a++;
+      else if (c==='subweapon') s++; else if (c==='wingman') w++;
+    });
+  } else {
+    document.querySelectorAll('.god-card:not(.hidden)').forEach(card => {
+      const parent = card.closest('[data-godcat]');
+      const gc = parent ? parent.dataset.godcat : '';
+      if (gc==='fighter') f++; else if (gc==='armor') a++;
+      else if (gc==='sub') s++; else if (gc==='wing') w++;
+    });
+    g = f+a+s+w;
+  }
+  document.getElementById('stat-total').textContent = f+a+s+w+(currentView==='god'?g:0);
+  document.getElementById('stat-fighter').textContent = f;
+  document.getElementById('stat-armor').textContent = a;
+  document.getElementById('stat-sub').textContent = s;
+  document.getElementById('stat-wing').textContent = w;
+  document.getElementById('stat-god').textContent = g;
+}
+
+// ====== EVENTS ======
+document.querySelectorAll('.main-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.main-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    currentView = tab.dataset.view;
+    currentCat = currentView === 'star5' ? 'all' : 'god-all';
+    document.getElementById('sub-tabs-star5').classList.toggle('hidden', currentView !== 'star5');
+    document.getElementById('sub-tabs-god').classList.toggle('hidden', currentView !== 'god');
+    document.querySelectorAll('.sub-tab').forEach(t=>t.classList.remove('active'));
+    const sel = currentView === 'star5' ? '[data-cat="all"]' : '[data-cat="god-all"]';
+    document.querySelector(sel).classList.add('active');
+    updateContent();
+  });
+});
+document.querySelectorAll('.sub-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    const parent = tab.closest('.sub-tabs');
+    parent.querySelectorAll('.sub-tab').forEach(t=>t.classList.remove('active'));
+    tab.classList.add('active');
+    currentCat = tab.dataset.cat;
+    updateContent();
+  });
+});
+document.getElementById('search').addEventListener('input', applySearch);
+
+updateContent();
+</script>
+</body>
+</html>
