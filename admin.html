@@ -18,7 +18,6 @@
   body {
     font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
     background: var(--bg); color: var(--text); min-height: 100vh;
-    display: flex;
   }
 
   body::before {
@@ -295,13 +294,13 @@
   .pub-status.info { color:var(--text2); }
 
   #img-preview img {
-    max-width:160px; max-height:160px; object-fit:contain; border-radius:6px;
+    max-width:200px; max-height:200px; object-fit:cover; border-radius:8px;
     background:rgba(0,0,0,0.5); border:1px solid var(--border);
-    transition:all 0.3s; padding:4px;
+    transition:all 0.3s; padding:6px;
   }
   #img-preview img:hover {
-    transform:scale(1.08); border-color:var(--accent);
-    box-shadow:0 0 25px rgba(0,180,216,0.2);
+    transform:scale(1.1); border-color:var(--accent);
+    box-shadow:0 0 30px rgba(0,180,216,0.25);
   }
 
   #login-wrap {
@@ -356,7 +355,7 @@
   @keyframes shake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-8px);} 50%{transform:translateX(8px);} 75%{transform:translateX(-4px);} }
   .login-box.shake { animation:shake 0.5s ease; }
 
-  #app-wrap { min-height:100vh; }
+  #app-wrap { width:100%; min-height:100vh; }
 </style>
 </head>
 <body>
@@ -1068,7 +1067,7 @@ function buildForm(data){
   html += '<button type="button" class="btn btnsm" id="btn-img-search" style="white-space:nowrap;">🔍 搜图</button>';
   html += '<button type="button" class="btn btnsm" id="btn-img-upload" style="white-space:nowrap;">📁 上传</button>';
   html += '</div>';
-  html += '<div id="img-preview" style="margin-top:6px;">'+(data.img ? '<img src="'+esc(data.img)+'" style="max-width:120px;max-height:120px;object-fit:contain;border-radius:4px;background:rgba(0,0,0,0.4);border:1px solid var(--border);" onerror="this.outerHTML=\'<span style=color:var(--red);font-size:0.7rem;>图片加载失败</span>\'">' : '')+'</div>';
+  html += '<div id="img-preview" style="margin-top:6px;">'+(data.img ? '<img src="'+esc(data.img)+'" style="max-width:200px;max-height:200px;object-fit:cover;border-radius:8px;background:rgba(0,0,0,0.4);border:1px solid var(--border);padding:4px;" onerror="this.outerHTML=\'<span style=color:var(--red);font-size:0.7rem;>图片加载失败</span>\'">' : '')+'</div>';
   html += '</div>';
   html += '<input type="file" id="file-up" accept="image/*" style="display:none;">';
 
@@ -1099,7 +1098,7 @@ function buildForm(data){
         var imgInput = document.getElementById('f-img');
         var preview = document.getElementById('img-preview');
         if (imgInput) imgInput.value = ev.target.result;
-        if (preview) preview.innerHTML = '<img src="'+ev.target.result+'" style="max-width:120px;max-height:120px;object-fit:contain;border-radius:4px;background:rgba(0,0,0,0.4);border:1px solid var(--border);">';
+        if (preview) preview.innerHTML = '<img src="'+ev.target.result+'" style="max-width:200px;max-height:200px;object-fit:cover;border-radius:8px;background:rgba(0,0,0,0.4);border:1px solid var(--border);padding:4px;">';
         toast('图片已加载为 Base64');
       };
       reader.readAsDataURL(file);
@@ -1112,7 +1111,7 @@ function buildForm(data){
     imgInput.addEventListener('input', function(){
       var v = imgInput.value.trim();
       if (v) {
-        preview.innerHTML = '<img src="'+esc(v)+'" style="max-width:120px;max-height:120px;object-fit:contain;border-radius:4px;background:rgba(0,0,0,0.4);border:1px solid var(--border);" onerror="this.outerHTML=\'<span style=color:var(--red);font-size:0.7rem;>图片加载失败</span>\'">';
+        preview.innerHTML = '<img src="'+esc(v)+'" style="max-width:200px;max-height:200px;object-fit:cover;border-radius:8px;background:rgba(0,0,0,0.4);border:1px solid var(--border);padding:4px;" onerror="this.outerHTML=\'<span style=color:var(--red);font-size:0.7rem;>图片加载失败</span>\'">';
       } else {
         preview.innerHTML = '';
       }
