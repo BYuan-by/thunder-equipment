@@ -842,37 +842,16 @@ function getEquipDataForExport(t) {
 }
 
 // ====== PUBLISH TO GITHUB (shared) ======
-function publishToGithub() {
-  var token = getToken() || document.getElementById('cfg-gh-token').value.trim();
-  if (!token) return; // Silently skip if no token configured
-
-  saveToken(token);
-  var owner = document.getElementById('cfg-gh-owner').value.trim() || 'xiaobai5165';
-  var repo = document.getElementById('cfg-gh-repo').value.trim() || 'thunder-equipment';
-  localStorage.setItem('lt_gh_owner', owner);
-  localStorage.setItem('lt_gh_repo', repo);
-
-  var statusEl = document.getElementById('pub-status');
-  statusEl.textContent = '正在同步到网站...';
-  statusEl.className = 'pub-status info';
-
-  var content = generateDataJS();
+function uploadFile(token, owner, repo, path, content, msg) {
   var b64 = btoa(unescape(encodeURIComponent(content)));
-
-  var apiUrl = 'https://api.github.com/repos/'+owner+'/'+repo+'/contents/data.js';
-
-  fetch(apiUrl, {
+  var apiUrl = 'https://api.github.com/repos/'+owner+'/'+repo+'/contents/'+path;
+  return fetch(apiUrl, {
     headers: { 'Authorization': 'token '+token, 'Accept': 'application/vnd.github+json' }
   })
   .then(function(r){ return r.json(); })
   .then(function(data){
-    var body = {
-      message: '更新数据文件 [后台自动同步]',
-      content: b64,
-      branch: 'main'
-    };
+    var body = { message: msg, content: b64, branch: 'main' };
     if (data.sha) body.sha = data.sha;
-
     return fetch(apiUrl, {
       method: 'PUT',
       headers: { 'Authorization': 'token '+token, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
@@ -882,12 +861,46 @@ function publishToGithub() {
   .then(function(r){
     if (!r.ok) return r.json().then(function(e){ throw new Error(e.message || 'HTTP '+r.status); });
     return r.json();
-  })
-  .then(function(){
-    statusEl.textContent = '已同步 ✓';
+  });
+}
+
+function publishToGithub() {
+  var token = getToken() || document.getElementById('cfg-gh-token').value.trim();
+  if (!token) return;
+
+  saveToken(token);
+  var owner = document.getElementById('cfg-gh-owner').value.trim() || 'xiaobai5165';
+  var repo = document.getElementById('cfg-gh-repo').value.trim() || 'thunder-equipment';
+  localStorage.setItem('lt_gh_owner', owner);
+  localStorage.setItem('lt_gh_repo', repo);
+
+  var statusEl = document.getElementById('pub-status');
+  statusEl.textContent = '正在同步...';
+  statusEl.className = 'pub-status info';
+
+  var files = [
+    { path: 'data.js', content: generateDataJS(), msg: '更新数据文件 [后台自动同步]' }
+  ];
+
+  try {
+    var displayHtml = window._displayPageSource;
+    if (displayHtml) {
+      files.push({ path: 'thunder-equipment.html', content: displayHtml, msg: '更新展示页 [后台自动同步]' });
+      files.push({ path: 'index.html', content: displayHtml, msg: '更新首页 [后台自动同步]' });
+    }
+  } catch(e) {}
+
+  var chain = Promise.resolve();
+  var uploaded = 0;
+  files.forEach(function(f){
+    chain = chain.then(function(){
+      return uploadFile(token, owner, repo, f.path, f.content, f.msg).then(function(){ uploaded++; });
+    });
+  });
+  chain.then(function(){
+    statusEl.textContent = '已同步 ' + uploaded + ' 个文件 ✓';
     statusEl.className = 'pub-status ok';
-  })
-  .catch(function(err){
+  }).catch(function(err){
     statusEl.textContent = '同步失败: '+err.message;
     statusEl.className = 'pub-status err';
   });
@@ -1240,6 +1253,18 @@ document.getElementById('btn-reset').addEventListener('click', function(){
 
 // ====== INIT ======
 loadConfigForm();
+
+// Prefetch display page source for GitHub sync
+try {
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'thunder-equipment.html', true);
+  xhr.onload = function(){
+    if (xhr.status === 200 || xhr.status === 0) {
+      window._displayPageSource = xhr.responseText;
+    }
+  };
+  xhr.send();
+} catch(e) {}
 
 })();
 </script>
