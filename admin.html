@@ -1030,6 +1030,7 @@ function buildForm(data){
     }
     fields.push({key:'skill',label:'特技',req:true});
     fields.push({key:'skillNote',label:'效果说明',full:true});
+    fields.push({key:'acquisition',label:'获取方式',full:true});
     fields.push({key:'rank',label:'品质等级文字',req:true});
     fields.push({key:'tier',label:'品质梯队(1-5)',type:'select',opts:['1','2','3','4','5'],req:true});
   } else {
@@ -1038,6 +1039,7 @@ function buildForm(data){
       {key:'mats',label:'合成材料',req:true,full:true},
       {key:'skill',label:'特技效果',req:true},
       {key:'note',label:'备注',full:true},
+      {key:'acquisition',label:'获取方式',full:true},
       {key:'tier',label:'强度梯队(1-3)',type:'select',opts:['1','2','3'],req:true}
     ];
   }
@@ -1132,9 +1134,9 @@ document.getElementById('btn-save').addEventListener('click', function(){
     } else {
       fieldDefs.push({key:'atk',req:true});
     }
-    fieldDefs.push({key:'skill',req:true},{key:'skillNote'},{key:'rank',req:true},{key:'tier',req:true});
+    fieldDefs.push({key:'skill',req:true},{key:'skillNote'},{key:'acquisition'},{key:'rank',req:true},{key:'tier',req:true});
   } else {
-    fieldDefs = [{key:'name',req:true},{key:'mats',req:true},{key:'skill',req:true},{key:'note'},{key:'tier',req:true}];
+    fieldDefs = [{key:'name',req:true},{key:'mats',req:true},{key:'skill',req:true},{key:'note'},{key:'acquisition'},{key:'tier',req:true}];
   }
 
   var hasError = false;

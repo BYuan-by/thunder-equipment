@@ -63,7 +63,8 @@ window.STAR5_DATA = {
       "skill": "普通",
       "skillNote": "基础型，无特殊效果",
       "rank": "五等",
-      "tier": "5"
+      "tier": "5",
+      "acquisition": "关卡1-16掉落 | 无尽模式宝箱 | 新手赠送"
     },
     {
       "name": "雷霆尖峰",
@@ -74,7 +75,8 @@ window.STAR5_DATA = {
       "skill": "贯穿",
       "skillNote": "弹幕穿透敌人",
       "rank": "四等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡3-20掉落 | 无尽模式宝箱 | 活动兑换 | 尖峰零式穿透弹清障之王"
     },
     {
       "name": "怒火凤凰",
@@ -85,7 +87,8 @@ window.STAR5_DATA = {
       "skill": "范围",
       "skillNote": "火焰弹幕范围清场",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡12-32掉落 | 无尽模式宝箱 | BOSS挑战 | 怒火凤凰范围火焰弹幕"
     },
     {
       "name": "极光幻影",
@@ -96,7 +99,8 @@ window.STAR5_DATA = {
       "skill": "激光",
       "skillNote": "全屏穿透激光弹幕",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡20-40掉落 | 无尽模式宝箱 | 钻石抽卡 | 极光幻影零氪玩家首选"
     },
     {
       "name": "神魔异形",
@@ -107,7 +111,8 @@ window.STAR5_DATA = {
       "skill": "贯穿",
       "skillNote": "顶级贯穿伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡32-48掉落 | 无尽模式高分宝箱 | 稀有掉落 | 神魔异形贯穿伤害BOSS战优势"
     },
     {
       "name": "智慧曙光",
@@ -118,7 +123,8 @@ window.STAR5_DATA = {
       "skill": "散射",
       "skillNote": "多方向散射弹幕",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡40-56掉落 | 无尽模式高分宝箱 | 限时活动 | 智慧曙光全屏散射火力压制"
     },
     {
       "name": "魔王刀锋",
@@ -129,7 +135,8 @@ window.STAR5_DATA = {
       "skill": "穿刺+斩击",
       "skillNote": "穿刺斩击双重伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡36-52掉落 | 无尽模式宝箱 | 活动限定 | 魔王刀锋穿刺+斩击双属性"
     },
     {
       "name": "X翼冰河",
@@ -140,7 +147,8 @@ window.STAR5_DATA = {
       "skill": "急冻",
       "skillNote": "冰冻减速+高额单体伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡48-64掉落 | 无尽模式高分宝箱 | 限时活动兑换 | T0.5次顶级战机"
     },
     {
       "name": "异星魅影",
@@ -151,7 +159,8 @@ window.STAR5_DATA = {
       "skill": "魅影",
       "skillNote": "暗影系进阶弹幕",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "镜面虚幻",
@@ -162,7 +171,8 @@ window.STAR5_DATA = {
       "skill": "反射",
       "skillNote": "镜面反射敌方子弹",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "跃动辉光",
@@ -173,7 +183,8 @@ window.STAR5_DATA = {
       "skill": "辉光",
       "skillNote": "跳跃辉光散射攻击",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "金箍神铁",
@@ -184,7 +195,8 @@ window.STAR5_DATA = {
       "skill": "重击",
       "skillNote": "重型金属弹幕攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "紫霞铃音",
@@ -195,7 +207,8 @@ window.STAR5_DATA = {
       "skill": "音波",
       "skillNote": "音波震荡攻击",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "绯霞流火",
@@ -206,7 +219,8 @@ window.STAR5_DATA = {
       "skill": "流火",
       "skillNote": "持续性火焰灼烧伤害",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "彩翼分辉",
@@ -217,7 +231,8 @@ window.STAR5_DATA = {
       "skill": "分光",
       "skillNote": "多重彩色弹幕",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "合金幻刃",
@@ -228,7 +243,8 @@ window.STAR5_DATA = {
       "skill": "合金",
       "skillNote": "合金强化利刃弹幕",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "星火蜉蝣",
@@ -239,7 +255,8 @@ window.STAR5_DATA = {
       "skill": "蜉蝣",
       "skillNote": "浮游炮式自主攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "星辉夜蝠",
@@ -250,7 +267,8 @@ window.STAR5_DATA = {
       "skill": "暗袭",
       "skillNote": "暗夜环境攻击加成",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "雅典战火",
@@ -261,7 +279,8 @@ window.STAR5_DATA = {
       "skill": "神火",
       "skillNote": "神圣火焰灼烧",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "暴龙战颚",
@@ -272,7 +291,8 @@ window.STAR5_DATA = {
       "skill": "撕裂",
       "skillNote": "暴龙撕咬攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "银须战锤",
@@ -283,7 +303,8 @@ window.STAR5_DATA = {
       "skill": "重锤",
       "skillNote": "锤击范围震荡伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "帝君圣刃",
@@ -294,7 +315,8 @@ window.STAR5_DATA = {
       "skill": "圣斩",
       "skillNote": "神圣斩击，顶级伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "狮心幻骑",
@@ -305,7 +327,8 @@ window.STAR5_DATA = {
       "skill": "冲锋",
       "skillNote": "骑士冲锋贯穿攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "凯旋重剑",
@@ -316,7 +339,8 @@ window.STAR5_DATA = {
       "skill": "重斩",
       "skillNote": "重型剑刃斩击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "兽王狂弹",
@@ -327,7 +351,8 @@ window.STAR5_DATA = {
       "skill": "狂野",
       "skillNote": "野兽系狂暴弹幕",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "百媚幻狐",
@@ -338,7 +363,8 @@ window.STAR5_DATA = {
       "skill": "魅惑",
       "skillNote": "魅惑系特殊弹幕效果",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "烈阳神辉",
@@ -349,7 +375,8 @@ window.STAR5_DATA = {
       "skill": "烈阳",
       "skillNote": "烈阳灼烧持续伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "震海狂波",
@@ -360,7 +387,8 @@ window.STAR5_DATA = {
       "skill": "波涛",
       "skillNote": "波浪式扩散攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "永夜新星",
@@ -371,7 +399,8 @@ window.STAR5_DATA = {
       "skill": "永夜",
       "skillNote": "暗夜星辰爆发伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "荆棘利刺",
@@ -382,7 +411,8 @@ window.STAR5_DATA = {
       "skill": "穿刺",
       "skillNote": "荆棘穿透攻击",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "苍穹灵矛",
@@ -393,7 +423,8 @@ window.STAR5_DATA = {
       "skill": "投射",
       "skillNote": "远程灵矛投射",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "神火烈焰",
@@ -404,7 +435,8 @@ window.STAR5_DATA = {
       "skill": "神焰",
       "skillNote": "最强火焰系伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     }
   ],
   "armor": [
@@ -418,7 +450,8 @@ window.STAR5_DATA = {
       "skill": "钢盾",
       "skillNote": "概率减免伤害",
       "rank": "五等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡1-12掉落 | 无尽模式宝箱 | 新手赠送"
     },
     {
       "name": "神圣之力",
@@ -430,7 +463,8 @@ window.STAR5_DATA = {
       "skill": "神圣",
       "skillNote": "满血时防止被秒杀",
       "rank": "四等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "黄金之铠",
@@ -442,7 +476,8 @@ window.STAR5_DATA = {
       "skill": "战魂",
       "skillNote": "被击中10%概率触发暴走",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡20-40掉落 | 无尽模式宝箱 | BOSS挑战 | 被击中概率提升武器等级"
     },
     {
       "name": "聚能之光",
@@ -454,7 +489,8 @@ window.STAR5_DATA = {
       "skill": "荣耀",
       "skillNote": "擦弹获得额外分数",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡8-24掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "魔龙之鳞",
@@ -466,7 +502,8 @@ window.STAR5_DATA = {
       "skill": "龙血",
       "skillNote": "自动回复生命值，新手神器",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡16-36掉落 | 无尽模式宝箱 | 钻石抽卡 | 自动回血新手首选"
     },
     {
       "name": "月光之轮",
@@ -478,7 +515,8 @@ window.STAR5_DATA = {
       "skill": "守护",
       "skillNote": "周期性生成防护盾",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡24-44掉落 | 无尽模式高分宝箱 | 活动兑换"
     },
     {
       "name": "原生之华",
@@ -490,7 +528,8 @@ window.STAR5_DATA = {
       "skill": "转化",
       "skillNote": "拾取水晶回复生命",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "红莲之怒",
@@ -502,7 +541,8 @@ window.STAR5_DATA = {
       "skill": "反伤",
       "skillNote": "受到攻击时火焰反伤",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "溯时之源",
@@ -514,7 +554,8 @@ window.STAR5_DATA = {
       "skill": "回溯",
       "skillNote": "时间回溯减免伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "狂热之意",
@@ -526,7 +567,8 @@ window.STAR5_DATA = {
       "skill": "狂热",
       "skillNote": "生命越低攻击越高",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "凝结之刻",
@@ -538,7 +580,8 @@ window.STAR5_DATA = {
       "skill": "冰结",
       "skillNote": "冻结效果减免伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "血怒之心",
@@ -550,7 +593,8 @@ window.STAR5_DATA = {
       "skill": "血怒",
       "skillNote": "击杀敌人回复生命",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "渊舞之岗",
@@ -562,7 +606,8 @@ window.STAR5_DATA = {
       "skill": "深渊",
       "skillNote": "深渊环境防御加成",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "清辉之灵",
@@ -574,7 +619,8 @@ window.STAR5_DATA = {
       "skill": "净化",
       "skillNote": "周期性清除负面效果",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "名远之威",
@@ -586,7 +632,8 @@ window.STAR5_DATA = {
       "skill": "威压",
       "skillNote": "威慑降低敌人伤害",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "反冲之障",
@@ -598,7 +645,8 @@ window.STAR5_DATA = {
       "skill": "反冲",
       "skillNote": "受击反弹伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "寂静之围",
@@ -610,7 +658,8 @@ window.STAR5_DATA = {
       "skill": "寂静",
       "skillNote": "展开沉默减伤领域",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "灭却之域",
@@ -622,7 +671,8 @@ window.STAR5_DATA = {
       "skill": "灭却",
       "skillNote": "超大范围伤害减免",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "雅典战盔",
@@ -634,7 +684,8 @@ window.STAR5_DATA = {
       "skill": "神佑",
       "skillNote": "雅典系列神圣防御",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "暴龙战甲",
@@ -646,7 +697,8 @@ window.STAR5_DATA = {
       "skill": "龙甲",
       "skillNote": "暴龙系列龙鳞防御",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "银须战盾",
@@ -658,7 +710,8 @@ window.STAR5_DATA = {
       "skill": "巨盾",
       "skillNote": "巨盾格挡减伤",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "帝君圣铠",
@@ -670,7 +723,8 @@ window.STAR5_DATA = {
       "skill": "圣佑",
       "skillNote": "帝君系列神圣护甲",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "狮心幻盔",
@@ -682,7 +736,8 @@ window.STAR5_DATA = {
       "skill": "狮心",
       "skillNote": "狮心系列防护加成",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "凯旋重甲",
@@ -694,7 +749,8 @@ window.STAR5_DATA = {
       "skill": "重甲",
       "skillNote": "重型装甲超高防御",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "兽王狂铠",
@@ -706,7 +762,8 @@ window.STAR5_DATA = {
       "skill": "狂铠",
       "skillNote": "狂暴状态防御提升",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "百媚幻罗",
@@ -718,7 +775,8 @@ window.STAR5_DATA = {
       "skill": "幻罗",
       "skillNote": "魅惑敌人降低伤害",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "烈阳神盾",
@@ -730,7 +788,8 @@ window.STAR5_DATA = {
       "skill": "神盾",
       "skillNote": "烈阳灼烧近身敌人",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "震海湛晶",
@@ -742,7 +801,8 @@ window.STAR5_DATA = {
       "skill": "湛晶",
       "skillNote": "水晶护盾回复加成",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "永夜暗铠",
@@ -754,7 +814,8 @@ window.STAR5_DATA = {
       "skill": "暗铠",
       "skillNote": "暗夜属性强化防御",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "荆棘猎甲",
@@ -766,7 +827,8 @@ window.STAR5_DATA = {
       "skill": "猎甲",
       "skillNote": "荆棘反伤护甲",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "苍穹爆炎",
@@ -778,7 +840,8 @@ window.STAR5_DATA = {
       "skill": "爆炎",
       "skillNote": "受击爆炸反击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "神火重铠",
@@ -790,7 +853,8 @@ window.STAR5_DATA = {
       "skill": "重铠",
       "skillNote": "神火系列顶级重甲",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     }
   ],
   "subweapon": [
@@ -803,7 +867,8 @@ window.STAR5_DATA = {
       "skill": "跟踪",
       "skillNote": "8枚自动追踪导弹",
       "rank": "五等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "贫铀穿甲弹",
@@ -814,7 +879,8 @@ window.STAR5_DATA = {
       "skill": "贯穿",
       "skillNote": "4枚穿透弹",
       "rank": "四等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡4-16掉落 | 无尽模式宝箱 | BOSS挑战 | 前期贴脸BOSS伤害可观"
     },
     {
       "name": "闪电新星",
@@ -825,7 +891,8 @@ window.STAR5_DATA = {
       "skill": "追踪+范围",
       "skillNote": "6颗追踪闪电球",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡8-24掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "融合核弹",
@@ -836,7 +903,8 @@ window.STAR5_DATA = {
       "skill": "范围",
       "skillNote": "2颗超大范围核弹",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡16-36掉落 | 无尽模式宝箱 | 钻石抽卡 | 全屏AOE范围爆发"
     },
     {
       "name": "聚能爆破弹",
@@ -847,7 +915,8 @@ window.STAR5_DATA = {
       "skill": "贯穿+范围",
       "skillNote": "贯穿敌人并产生爆炸",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡20-40掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "超导激光",
@@ -858,7 +927,8 @@ window.STAR5_DATA = {
       "skill": "锁定",
       "skillNote": "4束自动锁定激光",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "噬能孢子",
@@ -869,7 +939,8 @@ window.STAR5_DATA = {
       "skill": "吞噬",
       "skillNote": "吸取敌人能量转化伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "震荡干涉波",
@@ -880,7 +951,8 @@ window.STAR5_DATA = {
       "skill": "震荡",
       "skillNote": "震荡波范围伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "空间湮灭波",
@@ -891,7 +963,8 @@ window.STAR5_DATA = {
       "skill": "湮灭",
       "skillNote": "空间湮灭超大范围伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "归零矩阵",
@@ -902,7 +975,8 @@ window.STAR5_DATA = {
       "skill": "归零",
       "skillNote": "清除敌方弹幕",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "尖晶星芒",
@@ -913,7 +987,8 @@ window.STAR5_DATA = {
       "skill": "星芒",
       "skillNote": "散射星芒攻击",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "黑枪四圣",
@@ -924,7 +999,8 @@ window.STAR5_DATA = {
       "skill": "四圣",
       "skillNote": "四方向暗黑枪击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "紫青旋影",
@@ -935,7 +1011,8 @@ window.STAR5_DATA = {
       "skill": "旋转",
       "skillNote": "旋转弹幕攻击",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "频闪爆弹",
@@ -946,7 +1023,8 @@ window.STAR5_DATA = {
       "skill": "频闪",
       "skillNote": "高频闪光伴随爆炸",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "破坏力场",
@@ -957,7 +1035,8 @@ window.STAR5_DATA = {
       "skill": "力场",
       "skillNote": "持续伤害力场",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "动能破片弹",
@@ -968,7 +1047,8 @@ window.STAR5_DATA = {
       "skill": "破片",
       "skillNote": "爆炸碎片范围伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "红移谐振波",
@@ -979,7 +1059,8 @@ window.STAR5_DATA = {
       "skill": "谐振",
       "skillNote": "谐振连锁传递伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "幻视魔眼炮",
@@ -990,7 +1071,8 @@ window.STAR5_DATA = {
       "skill": "幻视",
       "skillNote": "迷惑敌人并造成伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "雅典战弓",
@@ -1001,7 +1083,8 @@ window.STAR5_DATA = {
       "skill": "神箭",
       "skillNote": "雅典系列神圣射击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "暴龙战吼",
@@ -1012,7 +1095,8 @@ window.STAR5_DATA = {
       "skill": "战吼",
       "skillNote": "暴龙咆哮范围伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "银须战炮",
@@ -1023,7 +1107,8 @@ window.STAR5_DATA = {
       "skill": "重炮",
       "skillNote": "重型炮击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "帝君圣箭",
@@ -1034,7 +1119,8 @@ window.STAR5_DATA = {
       "skill": "圣箭",
       "skillNote": "帝君系列神圣之箭",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "狮心幻刃",
@@ -1045,7 +1131,8 @@ window.STAR5_DATA = {
       "skill": "幻刃",
       "skillNote": "幻影利刃攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "凯旋重箭",
@@ -1056,7 +1143,8 @@ window.STAR5_DATA = {
       "skill": "重箭",
       "skillNote": "重型箭矢高额伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "兽王狂镖",
@@ -1067,7 +1155,8 @@ window.STAR5_DATA = {
       "skill": "狂镖",
       "skillNote": "狂暴飞镖连射",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "百媚幻花",
@@ -1078,7 +1167,8 @@ window.STAR5_DATA = {
       "skill": "幻花",
       "skillNote": "魅惑花瓣散射",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "烈阳神轮",
@@ -1089,7 +1179,8 @@ window.STAR5_DATA = {
       "skill": "神轮",
       "skillNote": "烈阳灼烧轮刃",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "震海神翼",
@@ -1100,7 +1191,8 @@ window.STAR5_DATA = {
       "skill": "神翼",
       "skillNote": "波浪羽翼攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "永夜巨涡",
@@ -1111,7 +1203,8 @@ window.STAR5_DATA = {
       "skill": "巨涡",
       "skillNote": "暗夜漩涡吞噬敌人",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "荆棘影蝶",
@@ -1122,7 +1215,8 @@ window.STAR5_DATA = {
       "skill": "影蝶",
       "skillNote": "暗影蝴蝶追踪攻击",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "苍穹神盾",
@@ -1133,7 +1227,8 @@ window.STAR5_DATA = {
       "skill": "神盾",
       "skillNote": "攻防一体神盾",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     },
     {
       "name": "神火裂弹",
@@ -1144,7 +1239,8 @@ window.STAR5_DATA = {
       "skill": "裂弹",
       "skillNote": "神火分裂弹幕",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | BOSS挑战"
     }
   ],
   "wingman": [
@@ -1157,7 +1253,8 @@ window.STAR5_DATA = {
       "skill": "机枪",
       "skillNote": "普通散射弹幕",
       "rank": "五等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "米加巨炮",
@@ -1168,7 +1265,8 @@ window.STAR5_DATA = {
       "skill": "激光",
       "skillNote": "粒子激光穿透",
       "rank": "四等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡4-16掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "超高速火炮",
@@ -1179,7 +1277,8 @@ window.STAR5_DATA = {
       "skill": "高速",
       "skillNote": "超高速直线射击",
       "rank": "三等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "毁灭守卫",
@@ -1190,7 +1289,8 @@ window.STAR5_DATA = {
       "skill": "防御",
       "skillNote": "拦截敌方子弹，手残福音",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡28-44掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "聚能电浆炮",
@@ -1201,7 +1301,8 @@ window.STAR5_DATA = {
       "skill": "贯穿",
       "skillNote": "顶级贯穿电浆束",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡20-40掉落 | 无尽模式宝箱 | BOSS挑战 | 穿透效果好输出稳定"
     },
     {
       "name": "超导电磁炮",
@@ -1212,7 +1313,8 @@ window.STAR5_DATA = {
       "skill": "贯穿",
       "skillNote": "电磁贯穿伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡32-52掉落 | 无尽模式高分宝箱 | 限时活动"
     },
     {
       "name": "饱和溶胶炮",
@@ -1223,7 +1325,8 @@ window.STAR5_DATA = {
       "skill": "溶胶",
       "skillNote": "粘着性持续伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "聚变液晶炮",
@@ -1234,7 +1337,8 @@ window.STAR5_DATA = {
       "skill": "聚变",
       "skillNote": "液晶聚变高额伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "回光幻翼",
@@ -1245,7 +1349,8 @@ window.STAR5_DATA = {
       "skill": "回光",
       "skillNote": "反射弹幕",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "琴弦捕手",
@@ -1256,7 +1361,8 @@ window.STAR5_DATA = {
       "skill": "捕获",
       "skillNote": "捕获敌方弹幕",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "循环能量刃",
@@ -1267,7 +1373,8 @@ window.STAR5_DATA = {
       "skill": "循环",
       "skillNote": "回旋能量刃攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "百变猎手",
@@ -1278,7 +1385,8 @@ window.STAR5_DATA = {
       "skill": "变形",
       "skillNote": "可变换多种攻击模式",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "荧惑飞炎",
@@ -1289,7 +1397,8 @@ window.STAR5_DATA = {
       "skill": "飞炎",
       "skillNote": "追踪火焰弹",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "光棱护卫",
@@ -1300,7 +1409,8 @@ window.STAR5_DATA = {
       "skill": "光棱",
       "skillNote": "光棱防御+反击",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "极昼灯芯",
@@ -1311,7 +1421,8 @@ window.STAR5_DATA = {
       "skill": "极昼",
       "skillNote": "持续光照灼烧",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "航迹光束",
@@ -1322,7 +1433,8 @@ window.STAR5_DATA = {
       "skill": "航迹",
       "skillNote": "跟踪光束攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "数据化涡流",
@@ -1333,7 +1445,8 @@ window.STAR5_DATA = {
       "skill": "涡流",
       "skillNote": "漩涡牵引持续伤害",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "日冕光晕",
@@ -1344,7 +1457,8 @@ window.STAR5_DATA = {
       "skill": "日冕",
       "skillNote": "日冕光环范围灼烧",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "雅典战光",
@@ -1355,7 +1469,8 @@ window.STAR5_DATA = {
       "skill": "圣光",
       "skillNote": "雅典系列神圣光芒",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "暴龙战翼",
@@ -1366,7 +1481,8 @@ window.STAR5_DATA = {
       "skill": "龙翼",
       "skillNote": "暴龙翼击狂风",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "银须战铳",
@@ -1377,7 +1493,8 @@ window.STAR5_DATA = {
       "skill": "战铳",
       "skillNote": "重型火铳轰击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "帝君圣威",
@@ -1388,7 +1505,8 @@ window.STAR5_DATA = {
       "skill": "圣威",
       "skillNote": "帝君系列神圣威压",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "狮心幻焰",
@@ -1399,7 +1517,8 @@ window.STAR5_DATA = {
       "skill": "幻焰",
       "skillNote": "幻影火焰攻击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "凯旋重刀",
@@ -1410,7 +1529,8 @@ window.STAR5_DATA = {
       "skill": "重刀",
       "skillNote": "重型刀锋切割",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "兽王狂刀",
@@ -1421,7 +1541,8 @@ window.STAR5_DATA = {
       "skill": "狂刀",
       "skillNote": "狂暴刀锋连斩",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "百媚幻樱",
@@ -1432,7 +1553,8 @@ window.STAR5_DATA = {
       "skill": "幻樱",
       "skillNote": "樱花幻影散射",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "烈阳神乌",
@@ -1443,7 +1565,8 @@ window.STAR5_DATA = {
       "skill": "神乌",
       "skillNote": "金乌烈阳灼烧",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "震海圣泉",
@@ -1454,7 +1577,8 @@ window.STAR5_DATA = {
       "skill": "圣泉",
       "skillNote": "治愈泉水回复",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "永夜幻刃",
@@ -1465,7 +1589,8 @@ window.STAR5_DATA = {
       "skill": "幻刃",
       "skillNote": "暗夜幻影之刃",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "荆棘耀枪",
@@ -1476,7 +1601,8 @@ window.STAR5_DATA = {
       "skill": "耀枪",
       "skillNote": "荆棘光枪穿刺",
       "rank": "二等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "苍穹巨斧",
@@ -1487,7 +1613,8 @@ window.STAR5_DATA = {
       "skill": "巨斧",
       "skillNote": "巨斧劈砍重击",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "神火魔炎",
@@ -1498,7 +1625,8 @@ window.STAR5_DATA = {
       "skill": "魔炎",
       "skillNote": "神火与魔焰双属性",
       "rank": "一等",
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     }
   ]
 };
@@ -1511,7 +1639,8 @@ window.GOD_DATA = {
       "skill": "范围+激光",
       "note": "入门级战神，零氪玩家首选",
       "tier": 3,
-      "img": ""
+      "img": "",
+      "acquisition": "合成: 怒火凤凰MAX + 极光幻影MAX | 通关第32关(巨蟹座BOSS)解锁 | 中期最佳过渡战神"
     },
     {
       "name": "自由悍将",
@@ -1519,7 +1648,8 @@ window.GOD_DATA = {
       "skill": "贯穿+散射",
       "note": "经典战神，综合能力均衡",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "合成: 神魔异形MAX + 智慧曙光MAX | 通关第48关(处女座BOSS)解锁 | 后期核心战神"
     },
     {
       "name": "暗夜神锋",
@@ -1527,7 +1657,8 @@ window.GOD_DATA = {
       "skill": "穿刺+斩击",
       "note": "综合能力最强的战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "冰河领主",
@@ -1535,7 +1666,8 @@ window.GOD_DATA = {
       "skill": "斩击+急冻",
       "note": "单体BOSS杀手，清兵稍弱",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "暴雪女帝",
@@ -1543,7 +1675,8 @@ window.GOD_DATA = {
       "skill": "急冻+散射",
       "note": "冰系散射型战神",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "绯红英灵",
@@ -1551,7 +1684,8 @@ window.GOD_DATA = {
       "skill": "激光+斩击",
       "note": "切割型战神",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "千飓武神",
@@ -1559,7 +1693,8 @@ window.GOD_DATA = {
       "skill": "魅影+反射",
       "note": "幻影系融合战神",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "斗战神猿",
@@ -1567,7 +1702,8 @@ window.GOD_DATA = {
       "skill": "重击+辉光",
       "note": "神铁辉光系战神",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "玉影紫霞",
@@ -1575,7 +1711,8 @@ window.GOD_DATA = {
       "skill": "音波+流火",
       "note": "铃音流火双属性融合",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "重装泰坦",
@@ -1583,7 +1720,8 @@ window.GOD_DATA = {
       "skill": "分光+合金",
       "note": "重型装甲战神",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "金源武圣",
@@ -1591,7 +1729,8 @@ window.GOD_DATA = {
       "skill": "蜉蝣+暗袭",
       "note": "蜉蝣夜蝠顶级融合",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "雅典女神",
@@ -1599,7 +1738,8 @@ window.GOD_DATA = {
       "skill": "神火",
       "note": "雅典系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "暴龙突击",
@@ -1607,7 +1747,8 @@ window.GOD_DATA = {
       "skill": "撕裂",
       "note": "暴龙系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "银须首领",
@@ -1615,7 +1756,8 @@ window.GOD_DATA = {
       "skill": "重锤",
       "note": "银须系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "帝君嬴皇",
@@ -1623,7 +1765,8 @@ window.GOD_DATA = {
       "skill": "圣斩",
       "note": "帝君系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "狮心圣骑",
@@ -1631,7 +1774,8 @@ window.GOD_DATA = {
       "skill": "冲锋",
       "note": "狮心系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "凯旋大帝",
@@ -1639,7 +1783,8 @@ window.GOD_DATA = {
       "skill": "重斩",
       "note": "凯旋系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "兽王忍侍",
@@ -1647,7 +1792,8 @@ window.GOD_DATA = {
       "skill": "狂野",
       "note": "兽王系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "百魅妖狐",
@@ -1655,7 +1801,8 @@ window.GOD_DATA = {
       "skill": "魅惑",
       "note": "百媚系列专属战神",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "烈阳主宰",
@@ -1663,7 +1810,8 @@ window.GOD_DATA = {
       "skill": "烈阳",
       "note": "烈阳系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "震海霸主",
@@ -1671,7 +1819,8 @@ window.GOD_DATA = {
       "skill": "波涛",
       "note": "震海系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "永夜魔君",
@@ -1679,7 +1828,8 @@ window.GOD_DATA = {
       "skill": "永夜",
       "note": "永夜系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "银色荆棘",
@@ -1687,7 +1837,8 @@ window.GOD_DATA = {
       "skill": "穿刺",
       "note": "荆棘系列专属战神",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "苍穹战魂",
@@ -1695,7 +1846,8 @@ window.GOD_DATA = {
       "skill": "投射",
       "note": "苍穹系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "神火流焰",
@@ -1703,7 +1855,8 @@ window.GOD_DATA = {
       "skill": "神焰",
       "note": "神火系列专属战神",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     }
   ],
   "armor": [
@@ -1713,7 +1866,8 @@ window.GOD_DATA = {
       "skill": "战魂+荣耀",
       "note": "擦分+受伤暴走，攻防一体",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "合成: 黄金之铠MAX + 聚能之光MAX | 无尽模式40万分解锁 | 擦分神器顶级护盾"
     },
     {
       "name": "守月魔殇",
@@ -1721,7 +1875,8 @@ window.GOD_DATA = {
       "skill": "龙血+守护",
       "note": "自动回血+暴走护盾，生存顶级",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "合成: 魔龙之鳞MAX + 月光之轮MAX | 无尽模式60万分解锁 | 擦分神器顶级护盾"
     },
     {
       "name": "原力华轮",
@@ -1729,7 +1884,8 @@ window.GOD_DATA = {
       "skill": "转化+守护",
       "note": "吃水晶回血+暴走护盾",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "永世决意",
@@ -1737,7 +1893,8 @@ window.GOD_DATA = {
       "skill": "钢盾+神圣",
       "note": "概率减伤+防秒杀，新手过渡",
       "tier": 3,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "净莲芳华",
@@ -1745,7 +1902,8 @@ window.GOD_DATA = {
       "skill": "转化+反伤",
       "note": "回血+火焰反伤双重效果",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     },
     {
       "name": "怒血金甲",
@@ -1753,7 +1911,8 @@ window.GOD_DATA = {
       "skill": "血怒强化",
       "note": "护盾期间攻击力+50%",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "关卡掉落 | 无尽模式宝箱 | 活动兑换"
     }
   ],
   "sub": [
@@ -1763,7 +1922,8 @@ window.GOD_DATA = {
       "skill": "爆破+锁定",
       "note": "贯穿爆炸+自动锁定",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "闪电核弹",
@@ -1771,7 +1931,8 @@ window.GOD_DATA = {
       "skill": "追踪+范围",
       "note": "追踪闪电+核弹大范围",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "彻翼巡星",
@@ -1779,7 +1940,8 @@ window.GOD_DATA = {
       "skill": "贯穿+跟踪",
       "note": "穿透追踪兼备，新手过渡",
       "tier": 3,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "死光晶孢",
@@ -1787,7 +1949,8 @@ window.GOD_DATA = {
       "skill": "锁定+吞噬",
       "note": "暗夜神锋套装核心配件",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "曲率振波",
@@ -1795,7 +1958,8 @@ window.GOD_DATA = {
       "skill": "吞噬+震荡",
       "note": "冰河领主套装核心配件",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "月光银铃",
@@ -1803,7 +1967,8 @@ window.GOD_DATA = {
       "skill": "机枪+盘旋",
       "note": "多段伤害覆盖",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "斥力破片",
@@ -1811,7 +1976,8 @@ window.GOD_DATA = {
       "skill": "扫射+贯穿",
       "note": "破片扫射清场",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     }
   ],
   "wing": [
@@ -1821,7 +1987,8 @@ window.GOD_DATA = {
       "skill": "环射+防御",
       "note": "360°螺旋弹幕+挡子弹",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "量子磁流炮",
@@ -1829,7 +1996,8 @@ window.GOD_DATA = {
       "skill": "穿甲+贯穿",
       "note": "双贯穿属性叠加",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "广域流星炮",
@@ -1837,7 +2005,8 @@ window.GOD_DATA = {
       "skill": "贯穿+溶胶",
       "note": "暗夜神锋套装核心配件",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "末日熔岩炮",
@@ -1845,7 +2014,8 @@ window.GOD_DATA = {
       "skill": "溶胶+聚变",
       "note": "冰河领主套装核心配件",
       "tier": 1,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "荧惑守心",
@@ -1853,7 +2023,8 @@ window.GOD_DATA = {
       "skill": "追踪+散射",
       "note": "追踪火焰散射",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     },
     {
       "name": "狼爪光束",
@@ -1861,7 +2032,8 @@ window.GOD_DATA = {
       "skill": "光束+撕裂",
       "note": "后期高输出僚机",
       "tier": 2,
-      "img": ""
+      "img": "",
+      "acquisition": "战神合成获取 | 两件同名75级紫装MAX融合"
     }
   ]
 };
